@@ -286,31 +286,7 @@
     padding: 32px 20px 60px;
   }
 
-  .lang-toggle {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 28px;
-  }
-  .lang-btn {
-    padding: 7px 18px;
-    border-radius: 20px;
-    border: 2px solid var(--border);
-    background: var(--white);
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    cursor: pointer;
-    color: var(--ink-mid);
-    transition: all 0.15s;
-  }
-  .lang-btn.active {
-    background: var(--red);
-    border-color: var(--red);
-    color: white;
-  }
-
-  .content-block { display: none; }
-  .content-block.active { display: block; }
+  /* lang-toggle removed — global nav toggle used instead */
 
   /* Steps */
   .steps-section {
@@ -459,6 +435,301 @@
     .scam-grid { grid-template-columns: 1fr; }
     .nav-logo { font-size: 0.95rem; }
   }
+
+  /* ── QUIZ CTA BOX ── */
+  .quiz-cta-box {
+    background: linear-gradient(135deg, #1A1A2E, #2D2D50);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin-top: 24px;
+  }
+  .quiz-cta-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .quiz-cta-icon { font-size: 2.2rem; }
+  .quiz-cta-title {
+    font-family: 'Merriweather', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+  .quiz-cta-sub { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
+  .quiz-start-btn {
+    background: var(--gold);
+    color: var(--ink);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+    margin-left: auto;
+  }
+  .quiz-start-btn:hover { opacity: 0.85; }
+  .badge-earned-cta {
+    text-align: center;
+    padding-top: 14px;
+    font-size: 0.9rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ── QUIZ PAGE ── */
+  .quiz-hero {
+    background: linear-gradient(135deg, #1A1A2E, #2D2D50);
+    color: white;
+    padding: 30px 20px 28px;
+  }
+  .quiz-progress-wrap { margin-top: 16px; }
+  .quiz-progress-bar {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .quiz-progress-fill {
+    background: var(--gold);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+    width: 33%;
+  }
+  .quiz-progress-label { font-size: 0.8rem; color: rgba(255,255,255,0.7); font-weight: 600; }
+
+  .quiz-body {
+    max-width: 700px;
+    margin: 30px auto 60px;
+    padding: 0 20px;
+  }
+  .question-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px;
+  }
+  .question-text {
+    font-family: 'Merriweather', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 22px;
+  }
+  .options-grid { display: flex; flex-direction: column; gap: 10px; }
+  .option-btn {
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 18px;
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ink-mid);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .option-btn:hover:not(:disabled) { border-color: var(--ink); color: var(--ink); background: white; }
+  .option-btn.correct { background: var(--green-light); border-color: var(--green); color: var(--green); }
+  .option-btn.wrong { background: var(--red-light); border-color: var(--red); color: var(--red); }
+  .option-btn:disabled { cursor: default; }
+
+  .quiz-feedback {
+    margin-top: 16px;
+    padding: 13px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .quiz-feedback.correct { background: var(--green-light); color: var(--green); border-left: 4px solid var(--green); }
+  .quiz-feedback.wrong { background: var(--red-light); color: var(--red-dark); border-left: 4px solid var(--red); }
+
+  .next-btn {
+    margin-top: 18px;
+    background: var(--ink);
+    color: white;
+    border: none;
+    padding: 11px 28px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    float: right;
+  }
+  .next-btn:hover { background: var(--ink-mid); }
+
+  /* ── RESULT CARD ── */
+  .result-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 36px 28px;
+    text-align: center;
+  }
+  .result-icon { font-size: 3.5rem; margin-bottom: 10px; }
+  .result-title { font-family: 'Merriweather', serif; font-size: 1.4rem; font-weight: 900; margin-bottom: 8px; }
+  .result-score { font-size: 1rem; color: var(--ink-mid); margin-bottom: 16px; }
+  .result-badge { font-size: 2.5rem; margin: 12px 0; }
+  .result-badge-label { font-size: 0.85rem; font-weight: 700; color: var(--gold); margin-bottom: 16px; }
+  .result-msg { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.6; max-width: 400px; margin: 0 auto 24px; }
+  .result-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .retry-btn {
+    background: var(--bg);
+    border: 2px solid var(--border);
+    color: var(--ink-mid);
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+  }
+  .back-module-btn {
+    background: var(--ink);
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+  }
+  .cert-btn {
+    background: var(--gold);
+    border: none;
+    color: var(--ink);
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.88rem;
+    cursor: pointer;
+  }
+
+  /* ── CERTIFICATE PAGE ── */
+  .cert-page-wrap { max-width: 820px; margin: 0 auto; padding: 20px 20px 60px; }
+  .cert-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  .print-btn {
+    background: var(--ink);
+    color: white;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .mobile-print-tip {
+    background: var(--gold-light);
+    border: 1px solid #F0D080;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    color: var(--ink-mid);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  .cert-name-input { text-align: center; padding: 20px; margin-bottom: 20px; }
+  .cert-name-input p { font-size: 0.95rem; color: var(--ink-mid); margin-bottom: 12px; }
+  .cert-name-input input {
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 18px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 380px;
+    margin-bottom: 12px;
+    display: block;
+    margin: 0 auto 12px;
+  }
+  .generate-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    padding: 11px 28px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+  /* THE CERTIFICATE */
+  .certificate {
+    border: 3px solid #B8960C;
+    border-radius: 4px;
+    background: #FFFDF5;
+    padding: 40px;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+  .certificate::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid #D4AF37;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  .cert-header { text-align: center; border-bottom: 2px solid #D4AF37; padding-bottom: 18px; margin-bottom: 24px; }
+  .cert-logo { font-size: 2.5rem; margin-bottom: 6px; }
+  .cert-org { font-family: 'Merriweather', serif; font-size: 1rem; font-weight: 900; color: var(--ink); }
+  .cert-faculty { font-size: 0.78rem; color: var(--ink-mid); margin-top: 2px; }
+  .cert-uni { font-size: 0.78rem; color: var(--ink-mid); }
+  .cert-body { text-align: center; }
+  .cert-presents { font-size: 0.9rem; color: var(--ink-light); margin-bottom: 8px; font-style: italic; }
+  .cert-name { font-family: 'Merriweather', serif; font-size: 2rem; font-weight: 900; color: #8B6914; margin-bottom: 14px; }
+  .cert-desc { font-size: 0.88rem; color: var(--ink-mid); max-width: 500px; margin: 0 auto 20px; line-height: 1.7; }
+  .cert-badges-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-light); margin-bottom: 10px; }
+  .cert-badges-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; font-size: 1.6rem; }
+  .cert-date { font-size: 0.82rem; color: var(--ink-light); margin-bottom: 24px; }
+  .cert-sig-row { display: flex; justify-content: center; }
+  .cert-sig-block { text-align: center; }
+  .cert-sig-line { width: 160px; border-top: 1.5px solid var(--ink); margin: 0 auto 6px; }
+  .cert-sig-name { font-size: 0.82rem; font-weight: 700; color: var(--ink); }
+  .cert-sig-title { font-size: 0.75rem; color: var(--ink-light); }
+  .cert-footer-strip { background: var(--ink); color: rgba(255,255,255,0.7); text-align: center; font-size: 0.75rem; padding: 8px; margin: 24px -40px -40px; border-radius: 0 0 2px 2px; }
+
+  /* PROGRESS SECTION */
+  .progress-section { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
+  .progress-section h3 { font-family: 'Merriweather', serif; font-size: 1rem; margin-bottom: 16px; color: var(--ink); }
+  .badges-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
+  .badge-item {
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--ink-light);
+  }
+  .badge-item.earned { background: var(--gold-light); border-color: var(--gold); color: var(--ink); }
+  .badge-item .b-icon { font-size: 1.8rem; display: block; margin-bottom: 4px; }
+  .badge-item .b-name { font-weight: 700; font-size: 0.72rem; line-height: 1.3; }
+  .badge-item .b-status { font-size: 0.68rem; margin-top: 2px; }
+
+  @media print {
+    nav, .cert-nav, .cert-name-input, .progress-section, footer { display: none !important; }
+    .page { display: block !important; }
+    #page-home, #page-detail, #page-quiz { display: none !important; }
+    .certificate { box-shadow: none; }
+  }
+
 </style>
 </head>
 <body>
@@ -485,8 +756,8 @@
     <div class="hero-badge">🔐 Cybersecurity Research Group (CyReg) · Universiti Putra Malaysia</div>
     <h1 id="hero-h1">Stay <span style="color:var(--gold)">Scam-Smart.</span></h1>
     <div class="hero-bm" id="hero-sub">Your community guide to recognising and avoiding online fraud.</div>
-    <p id="hero-desc">CyReg ScamShield is a public awareness programme by the Cybersecurity Research Group at UPM — helping Malaysians identify 11 major fraud tactics and defend against them.</p>
-    <div class="hero-stat" id="hero-stat">⚠️ Scam losses in Malaysia hit RM1.2 billion in 2023 — knowledge is your best defence</div>
+    <p id="hero-desc">CyReg ScamShield is a public awareness programme by the Cybersecurity Research Group at UPM. We help Malaysians identify 11 major fraud tactics and learn how to defend against them.</p>
+    <div class="hero-stat" id="hero-stat">⚠️ Scam losses in Malaysia hit RM1.2 billion in 2023. Your best defence is knowledge.</div>
   </div>
 
   <div class="section-title">
@@ -498,7 +769,7 @@
   <div class="scam-grid" id="scam-grid"></div>
 
   <footer>
-    <strong>CyReg ScamShield</strong> — <span id="footer-home-module">Community Scam Awareness Programme</span><br>
+    <strong>CyReg ScamShield</strong> | <span id="footer-home-module">Community Scam Awareness Programme</span><br>
     <span id="footer-home-by">Developed by the</span> <strong>Cybersecurity Research Group (CyReg)</strong>, Faculty of Computer Science &amp; Information Technology, Universiti Putra Malaysia<br>
     <span id="footer-home-emergency">For emergencies:</span> <strong>PDRM 999</strong> · <strong>BNM LINK 1-300-88-5465</strong> · <strong>NSRC 997</strong>
   </footer>
@@ -515,10 +786,6 @@
   </div>
 
   <div class="detail-body">
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="switchLang('en', this)">🇬🇧 English</button>
-      <button class="lang-btn" onclick="switchLang('bm', this)">🇲🇾 Bahasa Malaysia</button>
-    </div>
 
     <!-- WARNING BOX -->
     <div class="warning-box" id="d-warning"></div>
@@ -535,6 +802,19 @@
       <div id="d-tips"></div>
     </div>
 
+    <!-- QUIZ CTA -->
+    <div class="quiz-cta-box" id="quiz-cta-box">
+      <div class="quiz-cta-inner">
+        <div class="quiz-cta-icon" id="quiz-cta-icon"></div>
+        <div style="flex:1">
+          <div class="quiz-cta-title" id="quiz-cta-title">Ready to test your knowledge?</div>
+          <div class="quiz-cta-sub" id="quiz-cta-sub">Answer 3 questions correctly to earn your badge for this module.</div>
+        </div>
+        <button class="quiz-start-btn" id="quiz-start-btn" onclick="startQuiz()">Take Quiz →</button>
+      </div>
+      <div class="badge-earned-cta" id="badge-earned-cta" style="display:none"></div>
+    </div>
+
     <!-- REPORT -->
     <div class="report-section">
       <h3 id="d-report-title">🚨 Got Scammed? Report Immediately!</h3>
@@ -546,10 +826,11 @@
         <div class="hotline-pill">Semak Mule: ccid.rmp.gov.my</div>
       </div>
     </div>
+
   </div>
 
   <footer>
-    <strong>CyReg ScamShield</strong> — <span id="footer-detail-module">Community Scam Awareness Programme</span><br>
+    <strong>CyReg ScamShield</strong> | <span id="footer-detail-module">Community Scam Awareness Programme</span><br>
     <span id="footer-detail-by">Developed by the</span> <strong>Cybersecurity Research Group (CyReg)</strong>, Faculty of Computer Science &amp; Information Technology, Universiti Putra Malaysia<br>
     <span id="footer-detail-emergency">For emergencies:</span> <strong>PDRM 999</strong> · <strong>BNM LINK 1-300-88-5465</strong> · <strong>NSRC 997</strong>
   </footer>
@@ -561,42 +842,42 @@ const SCAMS = [
     id: 'phone', icon: '📞', color: '#D62828', colorFrom: '#9B1B1B', colorTo: '#D62828',
     en: {
       title: 'Phone Scams',
-      tagline: 'A stranger calls pretending to be a government officer — and pressures you to transfer money immediately.',
-      warning: '⚠️ CyReg Reminder: No legitimate authority — PDRM, BNM, Kastam, or any court — will ever demand payment or banking details over a phone call.',
+      tagline: 'A stranger calls pretending to be a government officer and pressures you to transfer money on the spot.',
+      warning: '⚠️ CyReg Reminder: No legitimate authority including PDRM, BNM, Kastam or any court will ever demand payment or banking details over a phone call.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
         'You receive an unexpected call from someone claiming to work for a government body, often using a withheld or overseas number.',
-        'The caller invents a problem — an undelivered package in your name, a frozen account, or a pending criminal case — to create panic.',
-        'They issue serious-sounding threats, such as an imminent arrest warrant or court summons, to overwhelm your judgment.',
+        'The caller invents a problem such as an undelivered package in your name, a frozen account or a pending criminal case to create panic.',
+        'They issue frightening threats such as an imminent arrest warrant or court summons to overwhelm your judgment.',
         'You are transferred to a "senior officer" who instructs you to move your money into a "safe account" they control.',
         'Some callers also manipulate victims into approving banking transactions that were secretly initiated by the scammer.'
       ],
       tipsTitle: '✅ CyReg Safety Advice',
       tips: [
-        { icon: '🔒', text: '<strong>Guard your banking credentials.</strong> Your PIN, TAC, and OTP are yours alone — share them with no one, ever.' },
+        { icon: '🔒', text: '<strong>Guard your banking credentials.</strong> Your PIN, TAC, and OTP are yours alone. Do not share them with anyone.' },
         { icon: '📵', text: '<strong>Hang up without hesitation</strong> the moment any caller demands money or threatens legal consequences.' },
-        { icon: '📞', text: '<strong>Call back on official numbers</strong> — look them up on the agency\'s real website, not a number provided by the caller.' },
+        { icon: '📞', text: '<strong>Call back on official numbers.</strong> Look them up on the agency\'s real website, not the number the caller gave you.' },
         { icon: '💸', text: '<strong>Reject any request to transfer money</strong> to an account you cannot independently verify.' },
         { icon: '🚫', text: '<strong>Decline all requests</strong> to approve mobile banking transactions you did not personally initiate.' }
       ]
     },
     bm: {
       title: 'Penipuan Telefon',
-      tagline: 'Orang tidak dikenali menelefon dengan menyamar sebagai pegawai kerajaan — dan mendesak anda memindahkan wang dengan segera.',
-      warning: '⚠️ Peringatan CyReg: Tiada pihak berkuasa yang sah — PDRM, BNM, Kastam, atau mana-mana mahkamah — akan meminta bayaran atau maklumat perbankan melalui panggilan telefon.',
+      tagline: 'Orang tidak dikenali menelefon dengan menyamar sebagai pegawai kerajaan dan mendesak anda memindahkan wang dengan serta-merta.',
+      warning: '⚠️ Peringatan CyReg: Tiada pihak berkuasa yang sah termasuk PDRM, BNM, Kastam atau mana-mana mahkamah yang akan meminta bayaran atau maklumat perbankan melalui panggilan telefon.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
         'Anda menerima panggilan mengejut daripada seseorang yang mendakwa bekerja untuk badan kerajaan, sering menggunakan nombor tersembunyi atau luar negara.',
-        'Pemanggil mereka-reka masalah — bungkusan tidak diambil atas nama anda, akaun dibekukan, atau kes jenayah yang belum selesai — untuk menimbulkan kepanikan.',
+        'Pemanggil mereka-reka masalah seperti bungkusan tidak diambil atas nama anda, akaun dibekukan atau kes jenayah yang belum selesai untuk menimbulkan kepanikan.',
         'Mereka mengeluarkan ancaman yang kedengaran serius, seperti waran tangkap atau saman mahkamah yang akan tiba, untuk mengganggu pertimbangan anda.',
         'Anda dipindahkan kepada "pegawai kanan" yang mengarahkan anda memindahkan wang ke "akaun selamat" yang mereka kawal.',
         'Sesetengah pemanggil juga memanipulasi mangsa untuk meluluskan transaksi perbankan yang secara rahsia dimulakan oleh penipu.'
       ],
       tipsTitle: '✅ Nasihat Keselamatan CyReg',
       tips: [
-        { icon: '🔒', text: '<strong>Jaga kelayakan perbankan anda.</strong> PIN, TAC, dan OTP anda adalah milik anda sahaja — jangan kongsikan dengan sesiapa.' },
+        { icon: '🔒', text: '<strong>Jaga kelayakan perbankan anda.</strong> PIN, TAC, dan OTP anda adalah milik anda sahaja. Jangan kongsi dengan sesiapa.' },
         { icon: '📵', text: '<strong>Tutup telefon tanpa teragak-agak</strong> apabila mana-mana pemanggil menuntut wang atau mengancam akibat undang-undang.' },
-        { icon: '📞', text: '<strong>Hubungi semula menggunakan nombor rasmi</strong> — carinya di laman web sebenar agensi, bukan nombor yang diberikan oleh pemanggil.' },
+        { icon: '📞', text: '<strong>Hubungi semula menggunakan nombor rasmi.</strong> Carinya di laman web sebenar agensi, bukan nombor yang diberikan oleh pemanggil.' },
         { icon: '💸', text: '<strong>Tolak sebarang permintaan memindahkan wang</strong> ke akaun yang tidak dapat anda sahkan secara bebas.' },
         { icon: '🚫', text: '<strong>Tolak semua permintaan</strong> untuk meluluskan transaksi perbankan mudah alih yang tidak anda mulakan sendiri.' }
       ]
@@ -606,40 +887,40 @@ const SCAMS = [
     id: 'malware', icon: '🦠', color: '#7B2D8B', colorFrom: '#5A1A6B', colorTo: '#9B3DB0',
     en: {
       title: 'Malware Scams',
-      tagline: 'A malicious app secretly installs on your phone — handing scammers full control of your device and bank.',
+      tagline: 'A malicious app secretly installs on your phone and hands scammers full control of your device and bank account.',
       warning: '⚠️ CyReg Reminder: Any app sent to you via WhatsApp, Telegram, or email is potentially dangerous. Install only from official app stores.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
-        'A fraudster sends a message containing a downloadable file (often an .APK) disguised as something harmless — a wedding card, parcel tracker, survey form, or utility bill.',
+        'A fraudster sends a message with a downloadable file, often an .APK, disguised as something harmless like a wedding card, parcel tracker, survey form or utility bill.',
         'Tapping the link triggers a download prompt encouraging you to install the file outside your phone\'s official app store.',
-        'Once installed, the app requests broad permissions — access to your screen, keystrokes, notifications, and other apps.',
+        'Once installed, the app requests broad permissions including access to your screen, keystrokes, notifications and other apps.',
         'Granting these permissions gives the criminal remote visibility into everything you type and tap, including your banking app.',
         'Your banking credentials are silently captured and used to drain your account without you realising.'
       ],
       tipsTitle: '✅ CyReg Safety Advice',
       tips: [
         { icon: '📱', text: '<strong>Download apps exclusively</strong> from Google Play Store, Apple App Store, or Huawei AppGallery.' },
-        { icon: '🔐', text: '<strong>Type your bank URL directly</strong> into your browser — never log in through a link someone else sent you.' },
+        { icon: '🔐', text: '<strong>Type your bank URL directly</strong> into your browser. Never log in through a link that someone else sent you.' },
         { icon: '🔗', text: '<strong>Treat unsolicited links as suspicious</strong> by default, even if the sender appears to be someone you know.' },
         { icon: '⚙️', text: '<strong>Disable "Unknown Sources" installation</strong> in your Android settings to block unauthorised app installs.' }
       ]
     },
     bm: {
       title: 'Penipuan Perisian Hasad',
-      tagline: 'Apl berbahaya dipasang secara senyap di telefon anda — memberikan penipu kawalan penuh ke atas peranti dan bank anda.',
+      tagline: 'Apl berbahaya dipasang secara senyap di telefon anda dan memberikan penipu kawalan penuh ke atas peranti serta akaun bank anda.',
       warning: '⚠️ Peringatan CyReg: Mana-mana apl yang dihantar kepada anda melalui WhatsApp, Telegram, atau e-mel berpotensi berbahaya. Pasang hanya dari kedai apl rasmi.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
-        'Penipu menghantar mesej mengandungi fail yang boleh dimuat turun (sering .APK) yang disamarkan sebagai sesuatu yang tidak berbahaya — kad kahwin, penjejak bungkusan, borang tinjauan, atau bil utiliti.',
+        'Penipu menghantar mesej yang mengandungi fail boleh muat turun, selalunya .APK, yang disamarkan sebagai sesuatu yang tidak berbahaya seperti kad kahwin, penjejak bungkusan, borang tinjauan atau bil utiliti.',
         'Mengetuk pautan mencetuskan gesaan muat turun yang menggalakkan anda memasang fail di luar kedai apl rasmi telefon anda.',
-        'Setelah dipasang, apl meminta kebenaran yang luas — akses ke skrin, ketukan kekunci, pemberitahuan, dan apl lain.',
+        'Setelah dipasang, apl meminta kebenaran yang luas termasuk akses ke skrin, ketukan kekunci, pemberitahuan dan apl lain.',
         'Memberikan kebenaran ini memberi penjenayah keterlihatan jauh ke dalam semua yang anda taip dan ketuk, termasuk apl perbankan anda.',
         'Kelayakan perbankan anda ditangkap secara senyap dan digunakan untuk menguras akaun anda tanpa anda sedar.'
       ],
       tipsTitle: '✅ Nasihat Keselamatan CyReg',
       tips: [
         { icon: '📱', text: '<strong>Muat turun apl secara eksklusif</strong> dari Google Play Store, Apple App Store, atau Huawei AppGallery.' },
-        { icon: '🔐', text: '<strong>Taip URL bank anda secara langsung</strong> ke dalam pelayar — jangan log masuk melalui pautan yang dihantar orang lain.' },
+        { icon: '🔐', text: '<strong>Taip URL bank anda secara langsung</strong> ke dalam pelayar. Jangan log masuk melalui pautan yang dihantar orang lain.' },
         { icon: '🔗', text: '<strong>Anggap pautan yang tidak diminta sebagai mencurigakan</strong> secara lalai, walaupun penghantar kelihatan seperti seseorang yang anda kenali.' },
         { icon: '⚙️', text: '<strong>Lumpuhkan pemasangan "Sumber Tidak Diketahui"</strong> dalam tetapan Android anda untuk menyekat pemasangan apl yang tidak dibenarkan.' }
       ]
@@ -649,13 +930,13 @@ const SCAMS = [
     id: 'job', icon: '💼', color: '#1565C0', colorFrom: '#0D3E78', colorTo: '#1976D2',
     en: {
       title: 'Job Scams',
-      tagline: 'A too-good-to-be-true job offer turns into a demand for money — or theft of your personal information.',
+      tagline: 'A job offer with an unrealistically high salary often ends with demands for money or theft of your personal information.',
       warning: '⚠️ CyReg Reminder: Real employers never charge you to apply or start work. Any upfront payment request is a scam signal.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
-        'Fraudsters advertise attractive job vacancies on social media platforms and messaging apps, impersonating HR departments of well-known companies.',
+        'Fraudsters advertise attractive job vacancies on social media platforms and messaging apps, impersonating HR departments of established companies.',
         'Candidates are promised unusually high salaries for minimal effort, with no formal interview required.',
-        'Victims are asked to pay fees upfront — described as registration charges, training costs, or background screening expenses.',
+        'Victims are asked to pay fees upfront, described as registration charges, training costs or background screening expenses.',
         'Once payment is received, the "employer" cuts all communication and vanishes.',
         'In some cases, personal documents submitted during the fake application process are later misused for financial fraud.'
       ],
@@ -664,18 +945,18 @@ const SCAMS = [
         { icon: '🔍', text: '<strong>Verify the company independently</strong> at SSM.com.my before submitting any application or personal details.' },
         { icon: '💳', text: '<strong>Paying to get a job is always a red flag.</strong> Legitimate employers deduct nothing before you start.' },
         { icon: '🪪', text: '<strong>Withhold your bank account and IC number</strong> until you have verified the employer through official channels.' },
-        { icon: '📞', text: '<strong>Confirm recruitment offers</strong> by calling the company\'s publicly listed phone number — not a contact given by the recruiter.' }
+        { icon: '📞', text: '<strong>Confirm recruitment offers</strong> by calling the company\'s publicly listed phone number, not the contact number given by the recruiter.' }
       ]
     },
     bm: {
       title: 'Penipuan Kerja',
-      tagline: 'Tawaran kerja yang terlalu bagus untuk menjadi kenyataan bertukar menjadi permintaan wang — atau kecurian maklumat peribadi anda.',
+      tagline: 'Tawaran kerja dengan gaji yang tidak masuk akal tinggi selalunya berakhir dengan permintaan wang atau kecurian maklumat peribadi anda.',
       warning: '⚠️ Peringatan CyReg: Majikan sebenar tidak pernah mengenakan bayaran untuk memohon atau memulakan kerja. Sebarang permintaan bayaran pendahuluan adalah tanda penipuan.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
         'Penipu mengiklankan kekosongan kerja yang menarik di platform media sosial dan apl mesej, menyamar sebagai jabatan HR syarikat terkenal.',
         'Calon dijanjikan gaji yang luar biasa tinggi dengan usaha yang minimum, tanpa temuduga formal diperlukan.',
-        'Mangsa diminta membayar yuran terlebih dahulu — digambarkan sebagai caj pendaftaran, kos latihan, atau perbelanjaan penyaringan latar belakang.',
+        'Mangsa diminta membayar yuran terlebih dahulu yang digambarkan sebagai caj pendaftaran, kos latihan atau perbelanjaan penyaringan latar belakang.',
         'Setelah pembayaran diterima, "majikan" memutuskan semua komunikasi dan menghilangkan diri.',
         'Dalam sesetengah kes, dokumen peribadi yang diserahkan semasa proses permohonan palsu disalahgunakan kemudian untuk penipuan kewangan.'
       ],
@@ -684,7 +965,7 @@ const SCAMS = [
         { icon: '🔍', text: '<strong>Sahkan syarikat secara bebas</strong> di SSM.com.my sebelum menghantar sebarang permohonan atau maklumat peribadi.' },
         { icon: '💳', text: '<strong>Membayar untuk mendapatkan kerja sentiasa menjadi amaran.</strong> Majikan yang sah tidak menolak apa-apa sebelum anda mula bekerja.' },
         { icon: '🪪', text: '<strong>Tahan nombor akaun bank dan IC anda</strong> sehingga anda mengesahkan majikan melalui saluran rasmi.' },
-        { icon: '📞', text: '<strong>Sahkan tawaran pengambilan pekerja</strong> dengan menghubungi nombor telefon syarikat yang tersenarai secara awam — bukan kenalan yang diberikan oleh perekrut.' }
+        { icon: '📞', text: '<strong>Sahkan tawaran pengambilan pekerja</strong> dengan menghubungi nombor telefon rasmi syarikat, bukan nombor yang diberikan oleh perekrut.' }
       ]
     }
   },
@@ -696,15 +977,15 @@ const SCAMS = [
       warning: '⚠️ CyReg Reminder: Banks and government agencies never send login links via SMS or WhatsApp. Always type the web address yourself.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
-        'You receive an SMS, email, or chat message that closely mimics a trusted institution — your bank, LHDN, Pos Malaysia, or a telco.',
-        'The message presents an urgent situation — a suspended account, a pending refund, or a security alert — and includes a link to "resolve" it.',
+        'You receive an SMS, email or chat message that closely mimics a trusted institution such as your bank, LHDN, Pos Malaysia or a telco.',
+        'The message describes an urgent situation such as a suspended account, a pending refund or a security alert, and includes a link to resolve it.',
         'Clicking the link opens a replica website, visually identical to the real one, designed purely to harvest credentials.',
         'Any username, password, or TAC entered on the fake site is instantly captured by the fraudster.',
         'The criminal then logs into your real account and transfers funds before you notice anything is wrong.'
       ],
       tipsTitle: '✅ CyReg Safety Advice',
       tips: [
-        { icon: '🔗', text: '<strong>Never click banking or government links</strong> in messages you did not request — regardless of how official they appear.' },
+        { icon: '🔗', text: '<strong>Never click banking or government links</strong> in messages you did not request, no matter how official they look.' },
         { icon: '🌐', text: '<strong>Type your bank\'s address directly</strong> into the browser bar each time (e.g. maybank2u.com.my, cimbclicks.com.my).' },
         { icon: '👀', text: '<strong>Inspect the URL carefully</strong> for misspellings or unusual domains before entering any credentials.' },
         { icon: '🖼️', text: '<strong>Confirm your security phrase and image</strong> are displayed correctly before typing your password.' }
@@ -716,15 +997,15 @@ const SCAMS = [
       warning: '⚠️ Peringatan CyReg: Bank dan agensi kerajaan tidak pernah menghantar pautan log masuk melalui SMS atau WhatsApp. Sentiasa taip alamat web sendiri.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
-        'Anda menerima SMS, e-mel, atau mesej chat yang meniru rapat institusi yang dipercayai — bank anda, LHDN, Pos Malaysia, atau syarikat telekomunikasi.',
-        'Mesej itu menyampaikan situasi mendesak — akaun digantung, bayaran balik tertunggak, atau amaran keselamatan — dan mengandungi pautan untuk "menyelesaikannya".',
-        'Mengklik pautan membuka laman web replika, serupa secara visual dengan yang sebenar, yang direka semata-mata untuk menuai kelayakan.',
-        'Sebarang nama pengguna, kata laluan, atau TAC yang dimasukkan di laman palsu ditangkap serta-merta oleh penipu.',
+        'Anda menerima SMS, e-mel atau mesej chat yang meniru institusi yang dipercayai seperti bank anda, LHDN, Pos Malaysia atau syarikat telekomunikasi.',
+        'Mesej itu menyampaikan situasi mendesak seperti akaun digantung, bayaran balik tertunggak atau amaran keselamatan, dan mengandungi pautan untuk menyelesaikannya.',
+        'Mengklik pautan itu membuka laman web tiruan yang kelihatan sama seperti yang asli, direka untuk mencuri maklumat log masuk anda.',
+        'Nama pengguna, kata laluan atau TAC yang anda masukkan di laman palsu itu terus diambil oleh penipu.',
         'Penjenayah kemudian log masuk ke akaun sebenar anda dan memindahkan dana sebelum anda menyedari ada sesuatu yang tidak kena.'
       ],
       tipsTitle: '✅ Nasihat Keselamatan CyReg',
       tips: [
-        { icon: '🔗', text: '<strong>Jangan sekali-kali klik pautan perbankan atau kerajaan</strong> dalam mesej yang tidak anda minta — tanpa mengira betapa rasminya ia kelihatan.' },
+        { icon: '🔗', text: '<strong>Jangan sekali-kali klik pautan perbankan atau kerajaan</strong> dalam mesej yang tidak anda minta, tidak kira betapa rasminya ia kelihatan.' },
         { icon: '🌐', text: '<strong>Taip alamat bank anda secara langsung</strong> ke bar pelayar setiap kali (cth. maybank2u.com.my, cimbclicks.com.my).' },
         { icon: '👀', text: '<strong>Periksa URL dengan teliti</strong> untuk ejaan yang salah atau domain yang luar biasa sebelum memasukkan sebarang kelayakan.' },
         { icon: '🖼️', text: '<strong>Sahkan frasa dan imej keselamatan anda</strong> dipaparkan dengan betul sebelum menaip kata laluan anda.' }
@@ -735,15 +1016,15 @@ const SCAMS = [
     id: 'mule', icon: '🏦', color: '#E65100', colorFrom: '#A63800', colorTo: '#F57C00',
     en: {
       title: 'Mule Account Scams',
-      tagline: 'Someone offers you cash to use your bank account — unknowingly making you part of a criminal network.',
-      warning: '⚠️ CyReg Reminder: Allowing anyone to use your bank account — even a friend or family member — is a criminal offence in Malaysia punishable by imprisonment.',
+      tagline: 'Someone offers you cash to use your bank account, which unknowingly makes you part of a criminal network.',
+      warning: '⚠️ CyReg Reminder: Allowing anyone to use your bank account, even a friend or family member, is a criminal offence in Malaysia punishable by imprisonment.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
-        'A scammer contacts you through social media, a friend, or a family member, offering an easy cash payment in exchange for temporary access to your bank account.',
-        'They claim the purpose is harmless — receiving business payments, currency exchange, or a short-term arrangement.',
-        'Your account is then used to receive and rapidly move money stolen from other fraud victims — a process known as money mule activity.',
-        'When financial authorities trace the fraudulent transactions, they lead directly to your account — and you face criminal investigation.',
-        'Even if you were unaware, the law holds you responsible for knowingly or negligently facilitating financial crime.'
+        'A scammer contacts you through social media, a friend or a family member and offers easy cash in exchange for temporary access to your bank account.',
+        'They claim the purpose is harmless, such as receiving business payments, currency exchange or a temporary financial arrangement.',
+        'Your account is then used to receive and quickly move money stolen from other fraud victims. This is known as money mule activity.',
+        'When financial authorities trace the fraudulent transactions back to your account, you will face a criminal investigation.',
+        'Even if you were unaware, the law can still hold you responsible for facilitating financial crime.'
       ],
       tipsTitle: '✅ CyReg Safety Advice',
       tips: [
@@ -755,14 +1036,14 @@ const SCAMS = [
     },
     bm: {
       title: 'Penipuan Akaun Mule',
-      tagline: 'Seseorang menawarkan wang tunai untuk menggunakan akaun bank anda — tanpa sedar menjadikan anda sebahagian daripada rangkaian jenayah.',
-      warning: '⚠️ Peringatan CyReg: Membenarkan sesiapa menggunakan akaun bank anda — walaupun rakan atau ahli keluarga — adalah kesalahan jenayah di Malaysia yang boleh dihukum penjara.',
+      tagline: 'Seseorang menawarkan wang tunai untuk menggunakan akaun bank anda, tanpa sedar menjadikan anda sebahagian daripada rangkaian jenayah.',
+      warning: '⚠️ Peringatan CyReg: Membenarkan sesiapa menggunakan akaun bank anda, walaupun rakan atau ahli keluarga, adalah kesalahan jenayah di Malaysia yang boleh dihukum penjara.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
         'Penipu menghubungi anda melalui media sosial, rakan, atau ahli keluarga, menawarkan bayaran wang tunai yang mudah sebagai pertukaran untuk akses sementara ke akaun bank anda.',
-        'Mereka mendakwa tujuannya tidak berbahaya — menerima bayaran perniagaan, pertukaran mata wang, atau pengaturan jangka pendek.',
-        'Akaun anda kemudian digunakan untuk menerima dan memindahkan wang yang dicuri daripada mangsa penipuan lain dengan cepat — satu proses yang dikenali sebagai aktiviti mule wang.',
-        'Apabila pihak berkuasa kewangan mengesan transaksi penipuan, ia membawa terus ke akaun anda — dan anda menghadapi siasatan jenayah.',
+        'Mereka mendakwa tujuannya tidak berbahaya, seperti menerima bayaran perniagaan, pertukaran mata wang atau urusan kewangan sementara.',
+        'Akaun anda kemudian digunakan untuk menerima dan memindahkan wang yang dicuri daripada mangsa penipuan lain. Proses ini dikenali sebagai aktiviti mule wang.',
+        'Apabila pihak berkuasa kewangan mengesan transaksi penipuan tersebut, ia akan membawa kepada siasatan jenayah terhadap anda.',
         'Walaupun anda tidak menyedari, undang-undang memegang anda bertanggungjawab kerana secara sedar atau cuai memudahkan jenayah kewangan.'
       ],
       tipsTitle: '✅ Nasihat Keselamatan CyReg',
@@ -778,40 +1059,40 @@ const SCAMS = [
     id: 'ecommerce', icon: '🛒', color: '#6D4C41', colorFrom: '#4A2E28', colorTo: '#8D5E57',
     en: {
       title: 'e-Commerce Scams',
-      tagline: 'You pay for an item online — but the seller vanishes and nothing arrives.',
-      warning: '⚠️ CyReg Reminder: Prices dramatically below market value and pressure to pay quickly outside a platform are the two biggest warning signs of an e-commerce scam.',
+      tagline: 'You pay for an item online but the seller vanishes and nothing arrives.',
+      warning: '⚠️ CyReg Reminder: Prices far below market value and pressure to pay quickly outside a platform are the two biggest warning signs of an online shopping scam.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
-        'A listing appears on social media or a marketplace offering a highly sought-after item at a price far below its normal value.',
-        'When contacted, the seller creates urgency — claiming the item is the last in stock or that another buyer is waiting.',
-        'Payment is requested directly to a personal account rather than through the platform\'s secure checkout.',
-        'After receiving payment, the seller either goes silent, blocks the buyer, or delivers a damaged, fake, or entirely different item.',
-        'Some sellers then reappear demanding additional fees — for shipping, customs, or insurance — to extort more money from the same victim.'
+        'A listing appears on social media or a marketplace offering a popular item at a price much lower than its normal value.',
+        'When contacted, the seller creates urgency by claiming the item is the last in stock or that another buyer is already waiting.',
+        'Payment is requested directly into a personal bank account rather than through the platform\'s secure checkout system.',
+        'After receiving payment, the seller goes silent, blocks the buyer or sends a damaged, fake or completely different item.',
+        'Some sellers reappear later demanding extra fees for shipping, customs or insurance as a way to extort more money from the same victim.'
       ],
       tipsTitle: '✅ CyReg Safety Advice',
       tips: [
         { icon: '🏪', text: '<strong>Use established platforms</strong> with built-in buyer protection such as Shopee, Lazada, or Mudah.my.' },
-        { icon: '⏸️', text: '<strong>Pause before paying</strong> — artificial urgency is a manipulation tool. A genuine seller will not mind you taking time to verify.' },
+        { icon: '⏸️', text: '<strong>Pause before paying.</strong> Artificial urgency is a manipulation tool. A genuine seller will not mind you taking time to verify first.' },
         { icon: '🔎', text: '<strong>Check the seller\'s bank account</strong> for scam reports at <strong>ccid.rmp.gov.my/semakmule</strong> before any transfer.' },
         { icon: '📹', text: '<strong>Request a live video call</strong> showing the actual item in real time before committing to purchase from an individual.' }
       ]
     },
     bm: {
       title: 'Penipuan e-Dagang',
-      tagline: 'Anda membayar untuk item dalam talian — tetapi penjual menghilang dan tiada apa yang tiba.',
-      warning: '⚠️ Peringatan CyReg: Harga yang jauh lebih rendah dari nilai pasaran dan tekanan untuk membayar dengan cepat di luar platform adalah dua tanda amaran terbesar penipuan e-dagang.',
+      tagline: 'Anda membayar untuk item dalam talian tetapi penjual menghilang dan tiada apa yang sampai.',
+      warning: '⚠️ Peringatan CyReg: Harga yang jauh lebih rendah daripada nilai pasaran dan tekanan untuk membayar dengan cepat di luar platform adalah dua tanda amaran terbesar bagi penipuan jual beli dalam talian.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
         'Senarai muncul di media sosial atau pasaran yang menawarkan item yang sangat diminati pada harga jauh di bawah nilai normalnya.',
-        'Apabila dihubungi, penjual mencipta keperluan mendesak — mendakwa item itu adalah yang terakhir dalam stok atau pembeli lain sedang menunggu.',
+        'Apabila dihubungi, penjual mencipta keperluan mendesak dengan mendakwa item itu adalah yang terakhir dalam stok atau pembeli lain sedang menunggu.',
         'Pembayaran diminta terus ke akaun peribadi dan bukannya melalui pembayaran selamat platform.',
-        'Selepas menerima bayaran, penjual sama ada berdiam diri, menyekat pembeli, atau menghantar item yang rosak, palsu, atau sepenuhnya berbeza.',
-        'Sesetengah penjual kemudian muncul semula menuntut bayaran tambahan — untuk penghantaran, kastam, atau insurans — untuk memeras lebih banyak wang dari mangsa yang sama.'
+        'Selepas menerima bayaran, penjual berdiam diri, menyekat pembeli atau menghantar item yang rosak, palsu atau sepenuhnya berbeza.',
+        'Sesetengah penjual muncul semula menuntut bayaran tambahan untuk penghantaran, kastam atau insurans sebagai cara untuk memeras lebih banyak wang daripada mangsa yang sama.'
       ],
       tipsTitle: '✅ Nasihat Keselamatan CyReg',
       tips: [
         { icon: '🏪', text: '<strong>Gunakan platform yang mantap</strong> dengan perlindungan pembeli terbina dalam seperti Shopee, Lazada, atau Mudah.my.' },
-        { icon: '⏸️', text: '<strong>Berhenti sebelum membayar</strong> — keperluan mendesak buatan adalah alat manipulasi. Penjual yang tulen tidak keberatan anda mengambil masa untuk mengesahkan.' },
+        { icon: '⏸️', text: '<strong>Berhenti sebelum membayar.</strong> Keperluan mendesak buatan adalah alat manipulasi. Penjual yang tulen tidak keberatan anda mengambil masa untuk mengesahkan.' },
         { icon: '🔎', text: '<strong>Semak akaun bank penjual</strong> untuk laporan penipuan di <strong>ccid.rmp.gov.my/semakmule</strong> sebelum sebarang pemindahan.' },
         { icon: '📹', text: '<strong>Minta panggilan video langsung</strong> yang menunjukkan item sebenar dalam masa nyata sebelum berkomitmen untuk membeli daripada individu.' }
       ]
@@ -821,42 +1102,42 @@ const SCAMS = [
     id: 'investment', icon: '📈', color: '#1B5E20', colorFrom: '#0D3311', colorTo: '#2E7D32',
     en: {
       title: 'Investment Scams',
-      tagline: 'A fraudster promises extraordinary financial returns in record time — then disappears with your savings.',
+      tagline: 'A fraudster promises extraordinary financial returns in record time and then disappears with your savings.',
       warning: '⚠️ CyReg Reminder: Guaranteed high returns with no risk do not exist in any legitimate financial market. If someone promises otherwise, treat it as fraud.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
         'Scammers reach out via social media groups, messaging apps, or phone calls, pitching an exclusive investment opportunity with exceptional profit projections.',
-        'Victims are shown fabricated screenshots of earnings or testimonials from fake investors to establish credibility.',
-        'A strict time limit is imposed — the offer "closes tonight" or "only five spots remain" — to prevent rational decision-making.',
-        'Early investors may receive small genuine payouts to build trust and encourage larger follow-up deposits — a classic Ponzi structure.',
-        'Once sufficient funds are collected, the operator shuts down all channels and disappears, leaving investors with no recourse.'
+        'Victims are shown fabricated screenshots of earnings and fake investor testimonials to make the scheme look credible.',
+        'A strict time limit is imposed, such as the offer closing tonight or only five spots remaining, to stop victims from thinking rationally.',
+        'Early investors may receive small genuine payouts to build trust and encourage larger deposits later. This is a classic Ponzi structure.',
+        'Once enough funds are collected, the operator shuts everything down and disappears, leaving investors with nothing.'
       ],
       tipsTitle: '✅ CyReg Safety Advice',
       tips: [
         { icon: '🔍', text: '<strong>Verify the company\'s licence</strong> through the Securities Commission at <strong>sc.com.my</strong> or Bank Negara at <strong>bnm.gov.my</strong> before investing a single ringgit.' },
-        { icon: '📋', text: '<strong>Seek a second opinion</strong> from a licensed financial advisor — never rely solely on information provided by the person promoting the scheme.' },
+        { icon: '📋', text: '<strong>Seek a second opinion</strong> from a licensed financial advisor. Never rely solely on information provided by the person promoting the scheme.' },
         { icon: '⚠️', text: '<strong>Treat guaranteed returns as a scam indicator.</strong> Every real investment carries a degree of risk.' },
-        { icon: '👥', text: '<strong>Consult someone you trust</strong> before committing any money — scammers deliberately isolate victims from outside advice.' }
+        { icon: '👥', text: '<strong>Consult someone you trust</strong> before committing any money. Scammers deliberately isolate victims from outside advice.' }
       ]
     },
     bm: {
       title: 'Penipuan Pelaburan',
-      tagline: 'Penipu menjanjikan pulangan kewangan yang luar biasa dalam masa rekod — kemudian menghilang dengan simpanan anda.',
+      tagline: 'Penipu menjanjikan pulangan kewangan yang luar biasa dalam masa yang singkat dan kemudian menghilang dengan simpanan anda.',
       warning: '⚠️ Peringatan CyReg: Pulangan tinggi yang dijamin tanpa risiko tidak wujud dalam mana-mana pasaran kewangan yang sah. Jika seseorang berjanji sebaliknya, anggap ia sebagai penipuan.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
         'Penipu menghubungi melalui kumpulan media sosial, apl mesej, atau panggilan telefon, memperkenalkan peluang pelaburan eksklusif dengan unjuran keuntungan yang luar biasa.',
-        'Mangsa ditunjukkan tangkapan skrin pendapatan yang direka atau testimoni daripada pelabur palsu untuk mewujudkan kredibiliti.',
-        'Had masa yang ketat dikenakan — tawaran "ditutup malam ini" atau "hanya tinggal lima tempat" — untuk menghalang membuat keputusan yang rasional.',
-        'Pelabur awal mungkin menerima bayaran kecil yang tulen untuk membina kepercayaan dan menggalakkan deposit susulan yang lebih besar — struktur Ponzi klasik.',
+        'Mangsa ditunjukkan tangkapan skrin pendapatan yang direka dan testimoni pelabur palsu untuk menjadikan skim itu kelihatan sah.',
+        'Had masa yang ketat dikenakan seperti tawaran ditutup malam ini atau hanya tinggal lima tempat untuk menghalang mangsa berfikir dengan rasional.',
+        'Pelabur awal mungkin menerima bayaran kecil yang tulen untuk membina kepercayaan dan menggalakkan deposit yang lebih besar. Ini adalah struktur Ponzi klasik.',
         'Sebaik sahaja dana yang mencukupi terkumpul, pengendali menutup semua saluran dan menghilang, meninggalkan pelabur tanpa jalan keluar.'
       ],
       tipsTitle: '✅ Nasihat Keselamatan CyReg',
       tips: [
         { icon: '🔍', text: '<strong>Sahkan lesen syarikat</strong> melalui Suruhanjaya Sekuriti di <strong>sc.com.my</strong> atau Bank Negara di <strong>bnm.gov.my</strong> sebelum melabur satu ringgit pun.' },
-        { icon: '📋', text: '<strong>Dapatkan pendapat kedua</strong> daripada penasihat kewangan berlesen — jangan bergantung semata-mata pada maklumat yang diberikan oleh orang yang mempromosikan skim itu.' },
+        { icon: '📋', text: '<strong>Dapatkan pendapat kedua</strong> daripada penasihat kewangan berlesen. Jangan bergantung semata-mata pada maklumat yang diberikan oleh orang yang mempromosikan skim itu.' },
         { icon: '⚠️', text: '<strong>Anggap pulangan terjamin sebagai penunjuk penipuan.</strong> Setiap pelaburan sebenar membawa tahap risiko tertentu.' },
-        { icon: '👥', text: '<strong>Berunding dengan seseorang yang anda percayai</strong> sebelum melabur apa-apa wang — penipu sengaja mengasingkan mangsa daripada nasihat luar.' }
+        { icon: '👥', text: '<strong>Berunding dengan seseorang yang anda percayai</strong> sebelum melabur apa-apa wang. Penipu sengaja mengasingkan mangsa daripada nasihat luar.' }
       ]
     }
   },
@@ -864,40 +1145,40 @@ const SCAMS = [
     id: 'cashreward', icon: '🎁', color: '#AD1457', colorFrom: '#7B0E3E', colorTo: '#C2185B',
     en: {
       title: 'Cash Reward Scams',
-      tagline: 'You receive news of a prize you never entered — and clicking to claim it leads straight to your bank account being emptied.',
+      tagline: 'You receive news of a prize you never entered and clicking to claim it leads straight to your bank account being emptied.',
       warning: '⚠️ CyReg Reminder: You cannot win a competition you never joined. Legitimate prizes are never conditional on bank transfers or submitting your account credentials.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
-        'A message arrives — by SMS, WhatsApp, or email — congratulating you on winning a cash prize, loyalty reward, or lucky draw on behalf of a well-known brand or bank.',
+        'A message arrives by SMS, WhatsApp or email congratulating you on winning a cash prize, loyalty reward or lucky draw from a reputable brand or bank.',
         'You are asked to click a link or dial a number to complete your "claim" before the offer expires.',
-        'The link opens a professional-looking fake site requesting your IC number, bank account, and login credentials to "process the transfer."',
-        'The details you enter are used immediately to access your real bank account and withdraw funds.',
-        'Some variants instruct victims to first make a small "processing fee" transfer — after which further demands follow.'
+        'The link opens a fake site that looks professional, asking for your IC number, bank account and login credentials to process the transfer.',
+        'The details you enter are used straight away to access your real bank account and withdraw funds.',
+        'Some variants instruct victims to first pay a small processing fee, after which more demands follow.'
       ],
       tipsTitle: '✅ CyReg Safety Advice',
       tips: [
         { icon: '🚫', text: '<strong>A prize that requires your PIN or TAC is always a scam.</strong> Real rewards are credited automatically, never via your credentials.' },
-        { icon: '🧘', text: '<strong>Slow down deliberately</strong> — the "expiry countdown" is a psychological pressure tactic designed to bypass your judgment.' },
+        { icon: '🧘', text: '<strong>Take your time and do not rush.</strong> The expiry countdown is a pressure tactic designed to cloud your judgment.' },
         { icon: '🔗', text: '<strong>Inspect every link</strong> in prize messages; compare the domain letter-by-letter against the company\'s real website.' },
         { icon: '📞', text: '<strong>Verify any prize</strong> by calling the company\'s official customer service number listed on their actual website.' }
       ]
     },
     bm: {
       title: 'Penipuan Hadiah Tunai',
-      tagline: 'Anda menerima berita tentang hadiah yang tidak pernah anda masuki — dan mengklik untuk menuntutnya membawa terus kepada akaun bank anda dikosongkan.',
+      tagline: 'Anda menerima berita tentang hadiah yang tidak pernah anda masuki dan mengklik untuk menuntutnya membawa terus kepada akaun bank anda dikosongkan.',
       warning: '⚠️ Peringatan CyReg: Anda tidak boleh memenangi pertandingan yang tidak pernah anda sertai. Hadiah yang sah tidak pernah bergantung pada pemindahan bank atau menyerahkan kelayakan akaun anda.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
-        'Mesej tiba — melalui SMS, WhatsApp, atau e-mel — mengucapkan tahniah kepada anda kerana memenangi hadiah tunai, ganjaran kesetiaan, atau cabutan bertuah bagi pihak jenama atau bank terkenal.',
+        'Mesej tiba melalui SMS, WhatsApp atau e-mel yang mengucapkan tahniah kepada anda kerana memenangi hadiah tunai, ganjaran kesetiaan atau cabutan bertuah daripada jenama atau bank terkenal.',
         'Anda diminta mengklik pautan atau mendail nombor untuk melengkapkan "tuntutan" anda sebelum tawaran tamat.',
         'Pautan membuka laman palsu yang kelihatan profesional yang meminta nombor IC, akaun bank, dan kelayakan log masuk anda untuk "memproses pemindahan."',
-        'Butiran yang anda masukkan digunakan serta-merta untuk mengakses akaun bank sebenar anda dan mengeluarkan dana.',
-        'Sesetengah varian mengarahkan mangsa untuk terlebih dahulu membuat pemindahan "yuran pemprosesan" kecil — selepas itu permintaan selanjutnya menyusul.'
+        'Butiran yang anda masukkan terus digunakan untuk mengakses akaun bank sebenar anda dan mengeluarkan wang.',
+        'Sesetengah varian mengarahkan mangsa untuk membuat bayaran yuran pemprosesan kecil terlebih dahulu, dan selepas itu permintaan lain akan datang.'
       ],
       tipsTitle: '✅ Nasihat Keselamatan CyReg',
       tips: [
         { icon: '🚫', text: '<strong>Hadiah yang memerlukan PIN atau TAC anda sentiasa merupakan penipuan.</strong> Ganjaran sebenar dikreditkan secara automatik, tidak pernah melalui kelayakan anda.' },
-        { icon: '🧘', text: '<strong>Lambatkan diri anda dengan sengaja</strong> — "kiraan detik tamat" adalah taktik tekanan psikologi yang direka untuk memintas pertimbangan anda.' },
+        { icon: '🧘', text: '<strong>Jangan tergesa-gesa membuat keputusan.</strong> Kiraan detik tamat adalah taktik tekanan yang direka untuk mengganggu pertimbangan anda.' },
         { icon: '🔗', text: '<strong>Periksa setiap pautan</strong> dalam mesej hadiah; bandingkan domain huruf demi huruf dengan laman web sebenar syarikat.' },
         { icon: '📞', text: '<strong>Sahkan sebarang hadiah</strong> dengan menghubungi nombor perkhidmatan pelanggan rasmi syarikat yang tersenarai di laman web sebenar mereka.' }
       ]
@@ -907,15 +1188,15 @@ const SCAMS = [
     id: 'loan', icon: '💰', color: '#37474F', colorFrom: '#1C2B31', colorTo: '#455A64',
     en: {
       title: 'Loan Scams',
-      tagline: 'A fake lender promises instant approval — but collects your personal data or upfront fees and delivers nothing.',
+      tagline: 'A fake lender promises instant loan approval but collects your personal data or upfront fees and delivers nothing in return.',
       warning: '⚠️ CyReg Reminder: Licensed banks and financial institutions process all fees through official channels after approval. No legitimate lender asks for cash upfront.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
-        'Fraudulent loan advertisements circulate on social media, websites, and messaging platforms, targeting people in financial difficulty with promises of fast, easy credit.',
-        'Fake agents impersonate representatives of licensed banks or financial institutions, sometimes providing convincing-looking business cards or letterheads.',
-        'Applicants are offered terms far more favourable than any real institution could provide — very low interest, no credit checks, same-day approval.',
-        'To "process the application," victims are asked to submit personal and banking documents, inadvertently handing over sensitive data.',
-        'An upfront fee is then demanded — described as an insurance deposit, administrative charge, or stamp duty — and the scammer vanishes after receiving it.'
+        'Fraudulent loan advertisements spread on social media, websites and messaging platforms, targeting people in financial difficulty with promises of fast and easy credit.',
+        'Fake agents pose as representatives of licensed banks or financial institutions and sometimes hand over business cards or official letterheads that look convincing.',
+        'Applicants are offered terms much better than any real institution could provide, including very low interest rates, no credit check and approval on the very same day.',
+        'To process the application, victims are asked to submit personal and banking documents, which gives the scammer access to sensitive data.',
+        'An upfront fee is then demanded, described as an insurance deposit, administrative charge or stamp duty. Once paid, the scammer vanishes.'
       ],
       tipsTitle: '✅ CyReg Safety Advice',
       tips: [
@@ -927,15 +1208,15 @@ const SCAMS = [
     },
     bm: {
       title: 'Penipuan Pinjaman',
-      tagline: 'Pemberi pinjaman palsu menjanjikan kelulusan segera — tetapi mengumpul data peribadi atau bayaran pendahuluan anda dan tidak memberikan apa-apa.',
+      tagline: 'Pemberi pinjaman palsu menjanjikan kelulusan segera tetapi mengumpul data peribadi atau bayaran pendahuluan anda tanpa memberikan apa-apa.',
       warning: '⚠️ Peringatan CyReg: Bank berlesen dan institusi kewangan memproses semua yuran melalui saluran rasmi selepas kelulusan. Tiada pemberi pinjaman yang sah meminta wang tunai terlebih dahulu.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
         'Iklan pinjaman penipuan beredar di media sosial, laman web, dan platform mesej, menyasarkan orang yang menghadapi kesulitan kewangan dengan janji kredit yang cepat dan mudah.',
-        'Ejen palsu menyamar sebagai wakil bank berlesen atau institusi kewangan, kadang-kadang menyediakan kad perniagaan atau kepala surat yang kelihatan meyakinkan.',
-        'Pemohon ditawarkan terma yang jauh lebih menguntungkan daripada mana-mana institusi sebenar yang boleh sediakan — faedah sangat rendah, tiada semakan kredit, kelulusan pada hari yang sama.',
+        'Ejen palsu menyamar sebagai wakil bank berlesen atau institusi kewangan dan kadang-kadang menghulurkan kad perniagaan atau kepala surat yang kelihatan sangat meyakinkan.',
+        'Pemohon ditawarkan terma yang jauh lebih baik daripada mana-mana institusi sebenar, termasuk kadar faedah yang sangat rendah, tiada semakan kredit dan kelulusan pada hari permohonan.',
         'Untuk "memproses permohonan," mangsa diminta menyerahkan dokumen peribadi dan perbankan, tanpa sedar menyerahkan data sensitif.',
-        'Yuran pendahuluan kemudian dituntut — digambarkan sebagai deposit insurans, caj pentadbiran, atau duti setem — dan penipu menghilang selepas menerimanya.'
+        'Yuran pendahuluan kemudian dituntut yang digambarkan sebagai deposit insurans, caj pentadbiran atau duti setem. Setelah menerimanya, penipu menghilang.'
       ],
       tipsTitle: '✅ Nasihat Keselamatan CyReg',
       tips: [
@@ -950,42 +1231,42 @@ const SCAMS = [
     id: 'love', icon: '💔', color: '#C62828', colorFrom: '#8E0000', colorTo: '#D32F2F',
     en: {
       title: 'Love Scams',
-      tagline: 'A seemingly genuine online romance is carefully engineered — to manipulate you into sending money to a stranger.',
-      warning: '⚠️ CyReg Reminder: Anyone who declares deep affection rapidly without meeting you, then asks for financial help, is operating a script — not a genuine relationship.',
+      tagline: 'A seemingly genuine online romance is carefully built up to manipulate you into sending money to a complete stranger.',
+      warning: '⚠️ CyReg Reminder: Anyone who declares deep affection rapidly without ever meeting you and then asks for financial help is running a script, not a genuine relationship.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
-        'The fraudster creates an attractive online persona — typically a successful professional working abroad — and initiates contact through a dating app or social media platform.',
-        'A relationship is cultivated gradually over weeks or months using carefully crafted messages, compliments, and small gestures to build emotional attachment.',
-        'The scammer avoids all attempts at video calls or in-person meetings, always producing a plausible excuse.',
-        'Once sufficient trust is established, a financial crisis is introduced — a medical emergency, a business deal gone wrong, or flight tickets to finally visit.',
-        'Each payment is followed by another request, with the relationship dangled as the reward for continued financial support, until the victim runs out of money or realises the deception.'
+        'The fraudster creates an attractive online persona, typically a successful professional working abroad, and makes first contact through a dating app or social media platform.',
+        'A relationship is built up gradually over weeks or months through carefully crafted messages, compliments and small gestures designed to create emotional attachment.',
+        'The scammer always finds a reason to avoid video calls or meeting face to face.',
+        'Once enough trust is established, a financial crisis appears such as a medical emergency, a business deal gone wrong or flight tickets to finally come and visit.',
+        'Each payment is followed by another request. The relationship is used as a reward for continued financial support until the victim runs out of money or realises the truth.'
       ],
       tipsTitle: '✅ CyReg Safety Advice',
       tips: [
         { icon: '💸', text: '<strong>Never send money</strong> to someone you have not met face to face, regardless of how long or how deeply you have communicated online.' },
         { icon: '🔒', text: '<strong>Keep your finances private.</strong> A genuine partner has no reason to need your account details or banking access.' },
-        { icon: '🔍', text: '<strong>Run a reverse image search</strong> on their profile photo using Google Images — stolen photos from other people are the most common sign of a fake profile.' },
-        { icon: '🧐', text: '<strong>Discuss your new relationship</strong> with a trusted friend or family member — outside perspective often reveals red flags that emotion obscures.' }
+        { icon: '🔍', text: '<strong>Run a reverse image search</strong> on their profile photo using Google Images. Stolen photos are the most common sign of a fake profile.' },
+        { icon: '🧐', text: '<strong>Discuss your new relationship</strong> with a trusted friend or family member. Outside perspective often reveals red flags that emotion can hide.' }
       ]
     },
     bm: {
       title: 'Penipuan Cinta',
-      tagline: 'Roman dalam talian yang kelihatan tulen direka dengan teliti — untuk memanipulasi anda menghantar wang kepada orang asing.',
-      warning: '⚠️ Peringatan CyReg: Sesiapa yang menyatakan kasih sayang mendalam dengan cepat tanpa bertemu anda, kemudian meminta bantuan kewangan, sedang menjalankan skrip — bukan hubungan yang tulen.',
+      tagline: 'Roman dalam talian yang kelihatan tulen dibina dengan teliti untuk memanipulasi anda menghantar wang kepada orang yang tidak dikenali.',
+      warning: '⚠️ Peringatan CyReg: Sesiapa yang menyatakan kasih sayang mendalam dengan cepat tanpa pernah bertemu anda dan kemudian meminta bantuan kewangan sedang menjalankan skrip, bukan hubungan yang tulen.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
-        'Penipu mencipta persona dalam talian yang menarik — biasanya profesional berjaya yang bekerja di luar negara — dan memulakan hubungan melalui apl temu janji atau platform media sosial.',
-        'Hubungan dipupuk secara beransur-ansur selama beberapa minggu atau bulan menggunakan mesej yang dibuat dengan teliti, pujian, dan isyarat kecil untuk membina keterikatan emosi.',
-        'Penipu mengelakkan semua percubaan panggilan video atau pertemuan peribadi, sentiasa menghasilkan alasan yang munasabah.',
-        'Sebaik sahaja kepercayaan yang mencukupi diwujudkan, krisis kewangan diperkenalkan — kecemasan perubatan, urusan perniagaan yang gagal, atau tiket penerbangan untuk akhirnya melawat.',
-        'Setiap pembayaran diikuti dengan permintaan lain, dengan hubungan digantung sebagai ganjaran untuk sokongan kewangan berterusan, sehingga mangsa kehabisan wang atau menyedari penipuan.'
+        'Penipu mencipta persona dalam talian yang menarik, biasanya sebagai profesional berjaya yang bekerja di luar negara, dan memulakan hubungan melalui apl temu janji atau media sosial.',
+        'Hubungan dipupuk secara perlahan selama beberapa minggu atau bulan melalui mesej yang teliti, pujian dan tindakan kecil yang direka untuk membina keterikatan emosi.',
+        'Penipu sentiasa ada alasan untuk mengelakkan panggilan video atau bertemu bersemuka.',
+        'Sebaik sahaja kepercayaan yang cukup terbina, krisis kewangan mula muncul seperti kecemasan perubatan, urusan perniagaan yang gagal atau keperluan tiket penerbangan untuk datang melawat.',
+        'Setiap pembayaran diikuti dengan permintaan baharu. Hubungan itu digunakan sebagai ganjaran untuk sokongan kewangan berterusan sehingga mangsa kehabisan wang atau menyedari penipuan.'
       ],
       tipsTitle: '✅ Nasihat Keselamatan CyReg',
       tips: [
         { icon: '💸', text: '<strong>Jangan sekali-kali menghantar wang</strong> kepada seseorang yang belum pernah anda temui bersemuka, tidak kira betapa lama atau mendalam anda berkomunikasi dalam talian.' },
         { icon: '🔒', text: '<strong>Jaga privasi kewangan anda.</strong> Pasangan yang tulen tidak mempunyai sebab untuk memerlukan butiran akaun atau akses perbankan anda.' },
-        { icon: '🔍', text: '<strong>Jalankan carian imej terbalik</strong> pada foto profil mereka menggunakan Google Images — foto yang dicuri daripada orang lain adalah tanda paling biasa profil palsu.' },
-        { icon: '🧐', text: '<strong>Bincangkan hubungan baru anda</strong> dengan rakan atau ahli keluarga yang dipercayai — perspektif luar sering mendedahkan tanda bahaya yang emosi sembunyikan.' }
+        { icon: '🔍', text: '<strong>Jalankan carian imej terbalik</strong> pada foto profil mereka menggunakan Google Images. Foto yang dicuri adalah tanda paling biasa profil palsu.' },
+        { icon: '🧐', text: '<strong>Bincangkan hubungan baru anda</strong> dengan rakan atau ahli keluarga yang dipercayai. Perspektif luar sering mendedahkan tanda bahaya yang emosi sembunyikan.' }
       ]
     }
   },
@@ -993,42 +1274,42 @@ const SCAMS = [
     id: 'qr', icon: '📷', color: '#283593', colorFrom: '#1A2366', colorTo: '#303F9F',
     en: {
       title: 'QR Scams (Quishing)',
-      tagline: 'A tampered QR code silently redirects you to a fake site or installs malware the moment you scan it.',
-      warning: '⚠️ CyReg Reminder: QR codes are opaque by design — you cannot see the destination before scanning. Always preview the URL your scanner shows before proceeding.',
+      tagline: 'A tampered QR code silently redirects you to a fake website or installs malware on your device the moment you scan it.',
+      warning: '⚠️ CyReg Reminder: QR codes do not show you the destination before you scan. Always preview the URL your scanner displays before you proceed.',
       stepsTitle: '⚠️ How This Scam Works',
       steps: [
-        'Fraudsters place counterfeit QR codes over legitimate ones in public locations — restaurant tables, parking meters, notice boards, and public toilets — or distribute them via messages and social media.',
-        'Scanning the code automatically navigates your browser to a phishing website built to resemble a bank, government portal, or payment gateway.',
-        'Some malicious QR codes trigger automatic file downloads that install spyware or remote access tools on your device without any further interaction.',
-        'Credentials entered on the fake site, or data captured by installed malware, are used to commit identity theft or drain financial accounts.',
-        'Victims often only discover the compromise after unusual transactions appear — sometimes days later.'
+        'Fraudsters place fake QR codes over legitimate ones in public locations such as restaurant tables, parking meters, notice boards and public toilets. They also distribute them through messages and social media.',
+        'Scanning the code takes your browser to a phishing website built to look like a bank, government portal or payment gateway.',
+        'Some malicious QR codes automatically download spyware or remote access tools onto your device without you doing anything else.',
+        'Credentials entered on the fake site and data captured by the malware are then used for identity theft or to drain your financial accounts.',
+        'Victims often only find out what happened after unusual transactions appear in their accounts, sometimes days after the incident.'
       ],
       tipsTitle: '✅ CyReg Safety Advice',
       tips: [
-        { icon: '📱', text: '<strong>Use a QR scanner that previews the URL</strong> before opening it — read the address carefully and confirm it matches the expected site.' },
-        { icon: '👀', text: '<strong>Physically inspect QR codes</strong> in public places for stickers placed over the original — a common tampering method.' },
+        { icon: '📱', text: '<strong>Use a QR scanner that previews the URL</strong> before opening it. Read the address carefully and confirm it matches the site you expect.' },
+        { icon: '👀', text: '<strong>Physically inspect QR codes</strong> in public places for stickers placed over the original. This is a common tampering method.' },
         { icon: '🚫', text: '<strong>Do not scan QR codes</strong> received unexpectedly in messages unless you have independently verified the sender\'s identity.' },
-        { icon: '🔒', text: '<strong>Enter banking details only through your bank\'s official app</strong> — never through a link or QR code scan, even if the page looks authentic.' }
+        { icon: '🔒', text: '<strong>Enter banking details only through your bank\'s official app.</strong> Never use a link or QR code scan to access your bank, even if the page looks real.' }
       ]
     },
     bm: {
       title: 'Penipuan Kod QR (Quishing)',
-      tagline: 'Kod QR yang telah diusik secara senyap mengalihkan anda ke laman palsu atau memasang perisian hasad sebaik sahaja anda mengimbasnya.',
-      warning: '⚠️ Peringatan CyReg: Kod QR tidak telus mengikut reka bentuk — anda tidak dapat melihat destinasi sebelum mengimbas. Sentiasa pratonton URL yang ditunjukkan pengimbas anda sebelum meneruskan.',
+      tagline: 'Kod QR yang telah diusik akan mengalihkan anda ke laman palsu atau memasang perisian hasad pada peranti anda sebaik sahaja anda mengimbasnya.',
+      warning: '⚠️ Peringatan CyReg: Kod QR tidak menunjukkan destinasi sebelum anda mengimbas. Sentiasa pratonton URL yang dipaparkan oleh pengimbas anda sebelum meneruskan.',
       stepsTitle: '⚠️ Bagaimana Penipuan Ini Berfungsi',
       steps: [
-        'Penipu meletakkan kod QR palsu mengatasi kod yang sah di lokasi awam — meja restoran, meter parkir, papan notis, dan tandas awam — atau mengedarkannya melalui mesej dan media sosial.',
-        'Mengimbas kod secara automatik menavigasi pelayar anda ke laman web pancingan data yang dibina menyerupai bank, portal kerajaan, atau gerbang pembayaran.',
-        'Sesetengah kod QR berbahaya mencetuskan muat turun fail automatik yang memasang perisian pengintip atau alat akses jauh pada peranti anda tanpa sebarang interaksi lanjut.',
-        'Kelayakan yang dimasukkan di laman palsu, atau data yang ditangkap oleh perisian hasad yang dipasang, digunakan untuk melakukan kecurian identiti atau menguras akaun kewangan.',
-        'Mangsa sering hanya mengetahui kompromi selepas transaksi luar biasa muncul — kadang-kadang beberapa hari kemudian.'
+        'Penipu meletakkan kod QR palsu mengatasi kod yang sah di lokasi awam seperti meja restoran, meter parkir, papan notis dan tandas awam. Mereka juga mengedarkannya melalui mesej dan media sosial.',
+        'Mengimbas kod tersebut akan membawa pelayar anda ke laman web pancingan data yang dibuat menyerupai bank, portal kerajaan atau gerbang pembayaran.',
+        'Sesetengah kod QR berbahaya secara automatik memuat turun perisian pengintip atau alat akses jauh ke peranti anda tanpa memerlukan sebarang tindakan tambahan.',
+        'Kelayakan yang dimasukkan di laman palsu dan data yang ditangkap oleh perisian hasad digunakan untuk kecurian identiti atau menguras akaun kewangan anda.',
+        'Mangsa sering hanya menyedari apa yang berlaku selepas transaksi luar biasa muncul dalam akaun mereka, kadang-kadang beberapa hari selepas kejadian.'
       ],
       tipsTitle: '✅ Nasihat Keselamatan CyReg',
       tips: [
-        { icon: '📱', text: '<strong>Gunakan pengimbas QR yang pratonton URL</strong> sebelum membukanya — baca alamat dengan teliti dan sahkan ia sepadan dengan laman yang dijangkakan.' },
-        { icon: '👀', text: '<strong>Periksa kod QR secara fizikal</strong> di tempat awam untuk pelekat yang diletakkan mengatasi yang asal — kaedah perusakan yang biasa.' },
+        { icon: '📱', text: '<strong>Gunakan pengimbas QR yang pratonton URL</strong> sebelum membukanya. Baca alamat dengan teliti dan sahkan ia sepadan dengan laman yang anda jangkakan.' },
+        { icon: '👀', text: '<strong>Periksa kod QR secara fizikal</strong> di tempat awam untuk mengesan pelekat yang diletakkan mengatasi kod asal. Ini adalah kaedah perusakan yang biasa.' },
         { icon: '🚫', text: '<strong>Jangan mengimbas kod QR</strong> yang diterima secara tidak dijangka dalam mesej melainkan anda telah mengesahkan identiti pengirim secara bebas.' },
-        { icon: '🔒', text: '<strong>Masukkan butiran perbankan hanya melalui apl rasmi bank anda</strong> — tidak pernah melalui pautan atau imbasan kod QR, walaupun halaman itu kelihatan tulen.' }
+        { icon: '🔒', text: '<strong>Masukkan butiran perbankan hanya melalui apl rasmi bank anda.</strong> Jangan gunakan pautan atau imbasan kod QR untuk mengakses bank anda, walaupun halaman itu kelihatan tulen.' }
       ]
     }
   }
@@ -1043,10 +1324,10 @@ const HOME_TEXT = {
     badge: '🔐 Cybersecurity Research Group (CyReg) · Universiti Putra Malaysia',
     h1: "Stay <span style='color:var(--gold)'>Scam-Smart.</span>",
     subtitle: 'Your community guide to recognising and avoiding online fraud.',
-    desc: 'CyReg ScamShield is a public awareness programme by the Cybersecurity Research Group at UPM — helping Malaysians identify 11 major fraud tactics and defend against them.',
-    stat: '⚠️ Scam losses in Malaysia hit RM1.2 billion in 2023 — knowledge is your best defence',
+    desc: 'CyReg ScamShield is a public awareness programme by the Cybersecurity Research Group at UPM. We help Malaysians identify 11 major fraud tactics and learn how to defend against them.',
+    stat: '⚠️ Scam losses in Malaysia hit RM1.2 billion in 2023. Your best defence is knowledge.',
     gridTitle: '11 Scam Types You Need to Know',
-    gridSub: 'Select any scam below to learn how it works and how to stay safe',
+    gridSub: 'Choose any scam type below to learn how it works and how to protect yourself',
     cardCta: 'Learn more →',
     navHome: '🏠 Home',
     footerModule: 'Community Scam Awareness Programme',
@@ -1059,10 +1340,10 @@ const HOME_TEXT = {
     badge: '🔐 Kumpulan Penyelidikan Keselamatan Siber (CyReg) · Universiti Putra Malaysia',
     h1: "Bijak Elak <span style='color:var(--gold)'>Scam.</span>",
     subtitle: 'Panduan komuniti anda untuk mengenal dan menghindari penipuan dalam talian.',
-    desc: 'CyReg ScamShield adalah program kesedaran awam oleh Kumpulan Penyelidikan Keselamatan Siber UPM — membantu rakyat Malaysia mengenal pasti 11 taktik penipuan utama dan cara melindungi diri.',
-    stat: '⚠️ Kerugian akibat scam di Malaysia mencecah RM1.2 bilion pada 2023 — ilmu adalah pertahanan terbaik anda',
+    desc: 'CyReg ScamShield adalah program kesedaran awam oleh Kumpulan Penyelidikan Keselamatan Siber UPM. Kami membantu rakyat Malaysia mengenal pasti 11 taktik penipuan utama dan cara melindungi diri.',
+    stat: '⚠️ Kerugian akibat scam di Malaysia mencecah RM1.2 bilion pada 2023. Ilmu pengetahuan adalah pertahanan terbaik anda',
     gridTitle: '11 Jenis Scam Yang Perlu Anda Tahu',
-    gridSub: 'Pilih mana-mana jenis scam di bawah untuk mengetahui cara ia berlaku dan cara untuk selamat',
+    gridSub: 'Pilih mana-mana jenis scam di bawah untuk mengetahui cara ia berlaku dan cara untuk melindungi diri anda',
     cardCta: 'Ketahui lebih →',
     navHome: '🏠 Utama',
     footerModule: 'Program Kesedaran Scam Komuniti',
@@ -1126,23 +1407,50 @@ function buildGrid(lang) {
 function setGlobalLang(lang) {
   globalLang = lang;
 
-  // Update nav toggle buttons
-  document.getElementById('nav-en-btn').classList.toggle('active', lang === 'en');
-  document.getElementById('nav-bm-btn').classList.toggle('active', lang === 'bm');
+  // Update all lang toggle buttons across all pages
+  const isEN = lang === 'en';
+  document.getElementById('nav-en-btn').classList.toggle('active', isEN);
+  document.getElementById('nav-bm-btn').classList.toggle('active', !isEN);
 
-  // Sync detail page inline lang toggle if on detail page
-  document.querySelectorAll('.lang-btn').forEach((b, i) => {
-    b.classList.toggle('active', (i === 0 && lang === 'en') || (i === 1 && lang === 'bm'));
-  });
+  // (inline lang toggle removed — global nav toggle handles all pages)
 
-  // If on home page, re-render home
+  // Home page
   if (document.getElementById('page-home').classList.contains('active')) {
     renderHome(lang);
   }
 
-  // If on detail page, re-render detail
+  // Detail page
   if (document.getElementById('page-detail').classList.contains('active') && currentScamIndex >= 0) {
     renderDetailPage(SCAMS[currentScamIndex], lang);
+    updateQuizCta();
+  }
+
+  // Quiz page — re-render current question or result in new language
+  if (document.getElementById('page-quiz').classList.contains('active') && quizScamId) {
+    const s = SCAMS.find(sc => sc.id === quizScamId);
+    // Update hero title and back button
+    document.getElementById('q-title').textContent = s[lang].title;
+    document.getElementById('quiz-back-btn').textContent = isEN ? '← Back' : '← Kembali';
+    // Reload questions in new language
+    quizQuestions = QUIZ_DATA[quizScamId][lang];
+    // Re-render progress label
+    const total = quizQuestions.length;
+    document.getElementById('quiz-progress-label').textContent = isEN
+      ? `Question ${quizCurrent + 1} of ${total}`
+      : `Soalan ${quizCurrent + 1} daripada ${total}`;
+    // If still on a question, re-render it
+    if (document.getElementById('question-card').style.display !== 'none') {
+      showQuestion();
+    }
+    // If on result screen, re-render result text
+    if (document.getElementById('result-card').style.display !== 'none') {
+      showResult();
+    }
+  }
+
+  // Cert page
+  if (document.getElementById('page-cert').classList.contains('active')) {
+    showCertPage();
   }
 }
 
@@ -1150,6 +1458,8 @@ function setGlobalLang(lang) {
 function showHome() {
   document.getElementById('page-home').classList.add('active');
   document.getElementById('page-detail').classList.remove('active');
+  document.getElementById('page-quiz').classList.remove('active');
+  document.getElementById('page-cert').classList.remove('active');
   renderHome(globalLang);
   window.scrollTo(0, 0);
 }
@@ -1163,6 +1473,7 @@ function showDetail(index) {
   document.getElementById('page-detail').classList.add('active');
 
   renderDetailPage(s, globalLang);
+  updateQuizCta();
   window.scrollTo(0, 0);
 }
 
@@ -1219,12 +1530,680 @@ function renderDetailContent(s, lang) {
 }
 
 // ── INLINE DETAIL LANG TOGGLE (syncs with global) ──────────
-function switchLang(lang, btn) {
-  setGlobalLang(lang);
-}
+// switchLang merged into setGlobalLang via global nav toggle
 
 // ── INIT ────────────────────────────────────────────────────
 renderHome('en');
+
+// ════════════════════════════════════════════════════════
+// QUIZ DATA — 3 questions per scam type (EN + BM)
+// ════════════════════════════════════════════════════════
+const QUIZ_DATA = {
+  phone: {
+    en: [
+      { q: "A caller claims to be from PDRM and says your bank account is frozen. What should you do?",
+        opts: ["Cooperate and give your PIN so they can unfreeze it", "Hang up and call PDRM directly using the official number", "Transfer your money to a safe account they provide", "Wait for them to call again with more instructions"],
+        ans: 1, exp: "Real PDRM officers never ask for PINs or money transfers over the phone. Always hang up and verify using the official number." },
+      { q: "You receive a call from an unknown international number claiming there is a court order against you. This is most likely a:",
+        opts: ["Real legal matter that needs immediate action", "Phone scam using fear to pressure you", "Mistake from another country's court system", "Genuine warning from Interpol"],
+        ans: 1, exp: "Creating fear with fake legal threats is a classic phone scam tactic. No real court issues arrest warnings via cold calls." },
+      { q: "Which of the following is a genuine warning sign of a phone scam?",
+        opts: ["The caller gives you time to verify their identity", "The caller insists you approve a banking transaction immediately", "The caller provides an official government website to check", "The caller speaks in a polite and unhurried manner"],
+        ans: 1, exp: "Urgency and pressure to act immediately without verification are the biggest warning signs of a phone scam." }
+    ],
+    bm: [
+      { q: "Seorang pemanggil mendakwa dari PDRM dan berkata akaun bank anda dibekukan. Apa yang patut anda buat?",
+        opts: ["Bekerjasama dan berikan PIN anda supaya mereka boleh buka semula", "Tutup telefon dan hubungi PDRM terus menggunakan nombor rasmi", "Pindahkan wang anda ke akaun selamat yang mereka berikan", "Tunggu mereka menelefon semula dengan arahan lanjut"],
+        ans: 1, exp: "Pegawai PDRM yang sebenar tidak pernah meminta PIN atau pemindahan wang melalui telefon. Sentiasa tutup dan sahkan menggunakan nombor rasmi." },
+      { q: "Anda menerima panggilan dari nombor antarabangsa yang mendakwa ada perintah mahkamah terhadap anda. Ini paling berkemungkinan adalah:",
+        opts: ["Perkara undang-undang sebenar yang memerlukan tindakan segera", "Penipuan telefon menggunakan ketakutan untuk menekan anda", "Kesilapan dari sistem mahkamah negara lain", "Amaran tulen dari Interpol"],
+        ans: 1, exp: "Mencipta ketakutan dengan ancaman undang-undang palsu adalah taktik penipuan telefon klasik. Mahkamah sebenar tidak mengeluarkan amaran tangkap melalui panggilan dingin." },
+      { q: "Manakah antara berikut merupakan tanda amaran sebenar penipuan telefon?",
+        opts: ["Pemanggil memberi anda masa untuk mengesahkan identiti mereka", "Pemanggil mendesak anda meluluskan transaksi perbankan dengan segera", "Pemanggil menyediakan laman web kerajaan rasmi untuk disemak", "Pemanggil bercakap dengan sopan dan tidak tergesa-gesa"],
+        ans: 1, exp: "Keperluan mendesak dan tekanan untuk bertindak segera tanpa pengesahan adalah tanda amaran terbesar penipuan telefon." }
+    ]
+  },
+  malware: {
+    en: [
+      { q: "Someone sends you an APK file via WhatsApp claiming it is a parcel tracking app. What should you do?",
+        opts: ["Install it to track your parcel", "Delete it immediately without opening", "Forward it to friends who might need it", "Open it to check what it contains first"],
+        ans: 1, exp: "APK files from WhatsApp or any messaging app are dangerous. Only install apps from the official Google Play Store, App Store or Huawei AppGallery." },
+      { q: "A malware app asks permission to monitor your screen and keystrokes. Granting this permission means:",
+        opts: ["The app can help you use your phone more efficiently", "Scammers can see everything you type including banking passwords", "Your phone battery will last longer", "Your phone will be protected from viruses"],
+        ans: 1, exp: "Screen and keystroke monitoring gives criminals full visibility of your passwords, PINs and banking credentials." },
+      { q: "Where should you ONLY download apps for your phone?",
+        opts: ["From links sent in WhatsApp messages", "From websites recommended by friends", "From Google Play Store, App Store or Huawei AppGallery only", "From any website that looks professional"],
+        ans: 2, exp: "Official app stores verify apps for safety. Apps from any other source can contain malware that steals your data." }
+    ],
+    bm: [
+      { q: "Seseorang menghantar fail APK melalui WhatsApp mendakwa ia adalah apl penjejak bungkusan. Apa yang patut anda buat?",
+        opts: ["Pasangnya untuk menjejak bungkusan anda", "Padamnya serta-merta tanpa membuka", "Sebarkan kepada rakan yang mungkin memerlukannya", "Buka untuk periksa kandungannya dahulu"],
+        ans: 1, exp: "Fail APK dari WhatsApp atau mana-mana apl mesej adalah berbahaya. Pasang apl hanya dari Google Play Store, App Store atau Huawei AppGallery yang rasmi." },
+      { q: "Apl perisian hasad meminta kebenaran untuk memantau skrin dan ketukan kekunci anda. Memberikan kebenaran ini bermakna:",
+        opts: ["Apl itu boleh membantu anda menggunakan telefon dengan lebih cekap", "Penipu boleh melihat semua yang anda taip termasuk kata laluan perbankan", "Bateri telefon anda akan lebih tahan lama", "Telefon anda akan dilindungi daripada virus"],
+        ans: 1, exp: "Pemantauan skrin dan ketukan kekunci memberi penjenayah akses penuh kepada kata laluan, PIN dan kelayakan perbankan anda." },
+      { q: "Di mana SAHAJA anda patut memuat turun apl untuk telefon anda?",
+        opts: ["Dari pautan yang dihantar dalam mesej WhatsApp", "Dari laman web yang disyorkan oleh rakan", "Dari Google Play Store, App Store atau Huawei AppGallery sahaja", "Dari mana-mana laman web yang kelihatan profesional"],
+        ans: 2, exp: "Kedai apl rasmi mengesahkan keselamatan apl. Apl dari sumber lain boleh mengandungi perisian hasad yang mencuri data anda." }
+    ]
+  },
+  job: {
+    en: [
+      { q: "A job offer on Facebook promises RM5,000 a week for easy online tasks with no interview required. This is most likely:",
+        opts: ["A genuine opportunity from a fast-growing company", "A job scam using unrealistic promises to attract victims", "A government-subsidised work programme", "A trial period for a real permanent position"],
+        ans: 1, exp: "Unusually high pay for easy work with no interview is a classic job scam formula." },
+      { q: "Before starting work, a new employer asks you to pay RM200 for a training kit. You should:",
+        opts: ["Pay it as it is a normal requirement", "Refuse and report it as it is a scam tactic", "Negotiate a lower amount before paying", "Ask your family to help pay the fee"],
+        ans: 1, exp: "Real employers never ask candidates to pay any fees before starting work. Upfront payment requests are a scam tactic." },
+      { q: "How can you verify if a company offering you a job is legitimate?",
+        opts: ["Check their Facebook page follower count", "Search for them on SSM.com.my and call their publicly listed number", "Ask the recruiter for a selfie with their ID card", "Check if their office address sounds professional"],
+        ans: 1, exp: "SSM.com.my is the official company registry in Malaysia. Always verify by calling the company's publicly listed number, not the recruiter's number." }
+    ],
+    bm: [
+      { q: "Tawaran kerja di Facebook menjanjikan RM5,000 seminggu untuk tugasan dalam talian yang mudah tanpa temuduga diperlukan. Ini paling berkemungkinan:",
+        opts: ["Peluang tulen dari syarikat yang berkembang pesat", "Penipuan kerja menggunakan janji yang tidak realistik untuk menarik mangsa", "Program kerja bersubsidi kerajaan", "Tempoh percubaan untuk jawatan tetap yang sebenar"],
+        ans: 1, exp: "Gaji yang luar biasa tinggi untuk kerja mudah tanpa temuduga adalah formula penipuan kerja yang klasik." },
+      { q: "Sebelum mula bekerja, majikan baru meminta anda membayar RM200 untuk kit latihan. Anda patut:",
+        opts: ["Bayar kerana ia adalah keperluan biasa", "Enggan dan laporkan kerana ia adalah taktik penipuan", "Berunding untuk jumlah yang lebih rendah sebelum membayar", "Minta keluarga membantu membayar yuran itu"],
+        ans: 1, exp: "Majikan sebenar tidak pernah meminta calon membayar sebarang yuran sebelum mula bekerja. Permintaan bayaran pendahuluan adalah taktik penipuan." },
+      { q: "Bagaimana anda boleh mengesahkan sama ada syarikat yang menawarkan kerja kepada anda adalah sah?",
+        opts: ["Semak bilangan pengikut halaman Facebook mereka", "Cari mereka di SSM.com.my dan hubungi nombor yang tersenarai secara awam", "Minta perekrut menghantar selfie dengan kad pengenalan mereka", "Semak sama ada alamat pejabat mereka kedengaran profesional"],
+        ans: 1, exp: "SSM.com.my adalah daftar syarikat rasmi Malaysia. Sentiasa sahkan dengan menghubungi nombor rasmi syarikat, bukan nombor perekrut." }
+    ]
+  },
+  phishing: {
+    en: [
+      { q: "You receive an SMS from 'Maybank' with a link to verify your account. What should you do?",
+        opts: ["Click the link and log in as instructed", "Ignore the link and log in directly at maybank2u.com.my", "Forward the message to friends to warn them", "Reply to the SMS to confirm your details"],
+        ans: 1, exp: "Always go directly to your bank's official website by typing the address yourself. Banks never send login links via SMS." },
+      { q: "A fake bank website looks identical to the real one. What is the best way to detect it?",
+        opts: ["Check if the page loads quickly", "Carefully check the URL for spelling mistakes or unusual domains", "See if the website has a professional design", "Check if the login button works"],
+        ans: 1, exp: "Scammers create pixel-perfect copies of real sites. The URL is the only reliable way to tell them apart — look for subtle misspellings." },
+      { q: "Which of these is the SAFEST way to access your online banking?",
+        opts: ["Click a link in an email from your bank", "Type your bank's web address directly into your browser", "Use a link saved in someone else's WhatsApp", "Search for your bank on Google and click the first result"],
+        ans: 1, exp: "Typing the address yourself is the only guaranteed safe way. Search results and email links can both lead to fake sites." }
+    ],
+    bm: [
+      { q: "Anda menerima SMS dari 'Maybank' dengan pautan untuk mengesahkan akaun anda. Apa yang patut anda buat?",
+        opts: ["Klik pautan dan log masuk seperti yang diarahkan", "Abaikan pautan dan log masuk terus di maybank2u.com.my", "Sebarkan mesej kepada rakan untuk memberi amaran", "Balas SMS untuk mengesahkan butiran anda"],
+        ans: 1, exp: "Sentiasa pergi terus ke laman web rasmi bank anda dengan menaip alamatnya sendiri. Bank tidak pernah menghantar pautan log masuk melalui SMS." },
+      { q: "Laman web bank palsu kelihatan sama seperti yang sebenar. Apakah cara terbaik untuk mengesannya?",
+        opts: ["Semak sama ada halaman dimuatkan dengan cepat", "Periksa URL dengan teliti untuk ejaan yang salah atau domain yang luar biasa", "Lihat sama ada laman web mempunyai reka bentuk yang profesional", "Semak sama ada butang log masuk berfungsi"],
+        ans: 1, exp: "Penipu mencipta salinan yang hampir sempurna bagi laman sebenar. URL adalah satu-satunya cara yang boleh dipercayai untuk membezakannya." },
+      { q: "Manakah antara berikut merupakan cara PALING SELAMAT untuk mengakses perbankan dalam talian anda?",
+        opts: ["Klik pautan dalam e-mel dari bank anda", "Taip alamat web bank anda terus ke dalam pelayar", "Gunakan pautan yang disimpan dalam WhatsApp orang lain", "Cari bank anda di Google dan klik keputusan pertama"],
+        ans: 1, exp: "Menaip alamat sendiri adalah satu-satunya cara yang dijamin selamat. Keputusan carian dan pautan e-mel kedua-duanya boleh membawa ke laman palsu." }
+    ]
+  },
+  mule: {
+    en: [
+      { q: "A friend offers to pay you RM500 a week to receive transfers into your bank account. You should:",
+        opts: ["Accept as it is easy passive income", "Refuse as your account could be used for money laundering", "Ask for RM1,000 instead before agreeing", "Accept but tell them to use small amounts only"],
+        ans: 1, exp: "Allowing others to use your account for money transfers makes you a money mule, which is a criminal offence in Malaysia regardless of whether you knew the source of the funds." },
+      { q: "What is a 'money mule'?",
+        opts: ["A person who sells mules for transport purposes", "A person whose bank account is used to move illegally obtained money", "A scammer who steals money from bank accounts", "A type of online investment scheme"],
+        ans: 1, exp: "A money mule allows their account to be used to receive and transfer stolen funds, becoming part of the criminal money laundering chain." },
+      { q: "Which website can you use to check if a bank account number is linked to scam activities?",
+        opts: ["bdnm.gov.my", "ccid.rmp.gov.my/semakmule", "semak-akaun.com.my", "polis.gov.my/check"],
+        ans: 1, exp: "The official Semak Mule portal at ccid.rmp.gov.my/semakmule is maintained by PDRM to check if an account has been reported for fraud." }
+    ],
+    bm: [
+      { q: "Rakan menawarkan untuk membayar anda RM500 seminggu untuk menerima pindahan ke akaun bank anda. Anda patut:",
+        opts: ["Terima kerana ia adalah pendapatan pasif yang mudah", "Enggan kerana akaun anda boleh digunakan untuk pengubahan wang haram", "Minta RM1,000 sebaliknya sebelum bersetuju", "Terima tetapi beritahu mereka untuk menggunakan jumlah kecil sahaja"],
+        ans: 1, exp: "Membenarkan orang lain menggunakan akaun anda untuk pemindahan wang menjadikan anda mule wang, yang merupakan kesalahan jenayah di Malaysia tanpa mengira sama ada anda mengetahui sumber dana tersebut." },
+      { q: "Apakah itu 'mule wang'?",
+        opts: ["Seseorang yang menjual keldai untuk tujuan pengangkutan", "Seseorang yang akaun banknya digunakan untuk memindahkan wang yang diperoleh secara haram", "Penipu yang mencuri wang dari akaun bank", "Sejenis skim pelaburan dalam talian"],
+        ans: 1, exp: "Mule wang membenarkan akaun mereka digunakan untuk menerima dan memindahkan dana curi, menjadi sebahagian daripada rantaian pengubahan wang haram jenayah." },
+      { q: "Laman web manakah yang boleh anda gunakan untuk menyemak sama ada nombor akaun bank dikaitkan dengan aktiviti penipuan?",
+        opts: ["bdnm.gov.my", "ccid.rmp.gov.my/semakmule", "semak-akaun.com.my", "polis.gov.my/check"],
+        ans: 1, exp: "Portal Semak Mule rasmi di ccid.rmp.gov.my/semakmule diselenggarakan oleh PDRM untuk menyemak sama ada akaun telah dilaporkan kerana penipuan." }
+    ]
+  },
+  ecommerce: {
+    en: [
+      { q: "You find an iPhone listed for only RM400 on Facebook Marketplace. The seller asks you to bank transfer immediately. You should:",
+        opts: ["Transfer quickly before someone else buys it", "Be suspicious as the price is too low and verify first", "Offer to pay half now and half on delivery", "Send the full amount and wait patiently"],
+        ans: 1, exp: "Prices dramatically below market value are a major red flag. Always verify the seller using ccid.rmp.gov.my/semakmule before any transfer." },
+      { q: "After paying for an item, the seller asks for an additional delivery fee before sending your order. This is most likely:",
+        opts: ["A standard courier surcharge", "A scam tactic to extract more money", "A government tax on online purchases", "A normal part of the buying process"],
+        ans: 1, exp: "Asking for additional fees after payment is received is a classic online shopping scam tactic to squeeze more money from the same victim." },
+      { q: "Which platform offers the MOST protection when buying items online?",
+        opts: ["Facebook Marketplace with direct bank transfer", "WhatsApp groups run by private sellers", "Established platforms like Shopee or Lazada with buyer protection", "Telegram seller channels"],
+        ans: 2, exp: "Established platforms hold payment until the buyer confirms receipt and offer dispute resolution. Direct transfers offer no protection if the seller disappears." }
+    ],
+    bm: [
+      { q: "Anda menjumpai iPhone yang disenaraikan hanya RM400 di Facebook Marketplace. Penjual meminta anda membuat pindahan bank dengan segera. Anda patut:",
+        opts: ["Pindah dengan cepat sebelum orang lain membelinya", "Curiga kerana harganya terlalu rendah dan sahkan dahulu", "Tawarkan untuk bayar separuh sekarang dan separuh semasa penghantaran", "Hantar jumlah penuh dan tunggu dengan sabar"],
+        ans: 1, exp: "Harga yang jauh lebih rendah dari nilai pasaran adalah tanda amaran besar. Sentiasa sahkan penjual menggunakan ccid.rmp.gov.my/semakmule sebelum sebarang pindahan." },
+      { q: "Selepas membayar untuk item, penjual meminta bayaran penghantaran tambahan sebelum menghantar pesanan anda. Ini paling berkemungkinan adalah:",
+        opts: ["Caj penghantaran standard kurier", "Taktik penipuan untuk mendapatkan lebih banyak wang", "Cukai kerajaan ke atas pembelian dalam talian", "Bahagian biasa dalam proses pembelian"],
+        ans: 1, exp: "Meminta bayaran tambahan selepas pembayaran diterima adalah taktik penipuan jual beli dalam talian klasik untuk mendapatkan lebih banyak wang dari mangsa yang sama." },
+      { q: "Platform manakah yang menawarkan perlindungan PALING banyak apabila membeli barangan dalam talian?",
+        opts: ["Facebook Marketplace dengan pindahan bank terus", "Kumpulan WhatsApp yang dijalankan oleh penjual peribadi", "Platform yang mantap seperti Shopee atau Lazada dengan perlindungan pembeli", "Saluran penjual Telegram"],
+        ans: 2, exp: "Platform yang mantap memegang pembayaran sehingga pembeli mengesahkan penerimaan dan menawarkan penyelesaian pertikaian. Pindahan terus tidak menawarkan perlindungan jika penjual menghilang." }
+    ]
+  },
+  investment: {
+    en: [
+      { q: "Someone in a WhatsApp group claims they made RM20,000 in 2 weeks from an investment with guaranteed returns. You should:",
+        opts: ["Join immediately as it sounds like a great opportunity", "Be very suspicious as guaranteed returns do not exist in real investments", "Ask them to show bank statements as proof", "Invest a small amount first to test if it is real"],
+        ans: 1, exp: "No legitimate investment can guarantee returns. Promises of guaranteed profit are the defining sign of investment fraud." },
+      { q: "Before investing, how should you verify if an investment company is legitimate?",
+        opts: ["Check how many stars they have on Google", "Check their licence on sc.com.my or bnm.gov.my", "See if they have a nice website and logo", "Ask the person who introduced you if it is safe"],
+        ans: 1, exp: "The Securities Commission (sc.com.my) and Bank Negara Malaysia (bnm.gov.my) maintain official registers of licensed investment companies." },
+      { q: "An investment scheme says the offer closes tonight and you must decide now. This urgency is designed to:",
+        opts: ["Help you get the best price before it is too late", "Stop you from thinking clearly or consulting others", "Reward fast decision makers with better returns", "Ensure fair distribution among all investors"],
+        ans: 1, exp: "Artificial urgency is a deliberate tactic to prevent you from doing research or getting a second opinion — a hallmark of investment scams." }
+    ],
+    bm: [
+      { q: "Seseorang dalam kumpulan WhatsApp mendakwa mereka mendapat RM20,000 dalam 2 minggu dari pelaburan dengan pulangan terjamin. Anda patut:",
+        opts: ["Sertai segera kerana kedengaran seperti peluang yang hebat", "Sangat curiga kerana pulangan terjamin tidak wujud dalam pelaburan sebenar", "Minta mereka menunjukkan penyata bank sebagai bukti", "Laburkan jumlah kecil dahulu untuk menguji sama ada ia benar"],
+        ans: 1, exp: "Tiada pelaburan yang sah boleh menjamin pulangan. Janji keuntungan terjamin adalah tanda penentu penipuan pelaburan." },
+      { q: "Sebelum melabur, bagaimana anda patut mengesahkan sama ada syarikat pelaburan adalah sah?",
+        opts: ["Semak berapa banyak bintang yang mereka ada di Google", "Semak lesen mereka di sc.com.my atau bnm.gov.my", "Lihat sama ada mereka mempunyai laman web dan logo yang cantik", "Tanya orang yang memperkenalkan anda sama ada ia selamat"],
+        ans: 1, exp: "Suruhanjaya Sekuriti (sc.com.my) dan Bank Negara Malaysia (bnm.gov.my) menyelenggara daftar rasmi syarikat pelaburan berlesen." },
+      { q: "Skim pelaburan mengatakan tawaran ditutup malam ini dan anda mesti membuat keputusan sekarang. Keperluan mendesak ini direka untuk:",
+        opts: ["Membantu anda mendapat harga terbaik sebelum terlambat", "Menghalang anda daripada berfikir dengan jelas atau berunding dengan orang lain", "Memberi ganjaran kepada pembuat keputusan yang cepat dengan pulangan yang lebih baik", "Memastikan pengagihan yang adil di kalangan semua pelabur"],
+        ans: 1, exp: "Keperluan mendesak buatan adalah taktik yang sengaja direka untuk menghalang anda daripada membuat penyelidikan atau mendapatkan pendapat kedua — ciri khas penipuan pelaburan." }
+    ]
+  },
+  cashreward: {
+    en: [
+      { q: "You receive a text saying you won RM10,000 from a bank contest you never entered. The message includes a link to claim your prize. You should:",
+        opts: ["Click the link quickly before the prize expires", "Delete the message as you cannot win a contest you never joined", "Forward it to family members to help you claim it", "Reply with your bank details to receive the transfer"],
+        ans: 1, exp: "You cannot win a prize from a contest you never entered. This is a fake reward message designed to steal your banking credentials." },
+      { q: "To claim a 'prize', a message asks for your bank PIN number. A legitimate prize would:",
+        opts: ["Always need your PIN to verify your identity", "Never require your PIN under any circumstances", "Only ask for the last 4 digits of your PIN", "Only ask once and then delete the request"],
+        ans: 1, exp: "No legitimate prize, cashback or reward ever requires your banking PIN, password or TAC. Any such request is fraud." },
+      { q: "You receive a call saying you won a lucky draw. The caller sounds very professional and mentions a well-known bank's name. You should:",
+        opts: ["Trust them as they sound professional and mentioned a real bank", "Hang up and call the bank directly using the official number on their website", "Give them your account number so they can deposit the prize", "Answer their security questions to verify your identity"],
+        ans: 1, exp: "Scammers deliberately use real brand names and sound professional to gain trust. Always verify by calling the official number yourself." }
+    ],
+    bm: [
+      { q: "Anda menerima mesej yang mengatakan anda memenangi RM10,000 dari pertandingan bank yang tidak pernah anda sertai. Mesej itu menyertakan pautan untuk menuntut hadiah anda. Anda patut:",
+        opts: ["Klik pautan dengan cepat sebelum hadiah tamat tempoh", "Padamkan mesej kerana anda tidak boleh memenangi pertandingan yang tidak pernah anda sertai", "Sebarkan kepada ahli keluarga untuk membantu anda menuntutnya", "Balas dengan butiran bank anda untuk menerima pindahan"],
+        ans: 1, exp: "Anda tidak boleh memenangi hadiah dari pertandingan yang tidak pernah anda sertai. Ini adalah mesej ganjaran palsu yang direka untuk mencuri kelayakan perbankan anda." },
+      { q: "Untuk menuntut 'hadiah', mesej meminta nombor PIN bank anda. Hadiah yang sah akan:",
+        opts: ["Sentiasa memerlukan PIN anda untuk mengesahkan identiti anda", "Tidak pernah memerlukan PIN anda dalam apa jua keadaan", "Hanya meminta 4 digit terakhir PIN anda", "Hanya bertanya sekali dan kemudian memadam permintaan"],
+        ans: 1, exp: "Tiada hadiah, cashback atau ganjaran yang sah yang memerlukan PIN, kata laluan atau TAC perbankan anda. Sebarang permintaan sedemikian adalah penipuan." },
+      { q: "Anda menerima panggilan mengatakan anda memenangi cabutan bertuah. Pemanggil kedengaran sangat profesional dan menyebut nama bank terkenal. Anda patut:",
+        opts: ["Percayai mereka kerana mereka kedengaran profesional dan menyebut bank sebenar", "Tutup telefon dan hubungi bank terus menggunakan nombor rasmi di laman web mereka", "Berikan nombor akaun anda supaya mereka boleh mendepositkan hadiah", "Jawab soalan keselamatan mereka untuk mengesahkan identiti anda"],
+        ans: 1, exp: "Penipu sengaja menggunakan nama jenama sebenar dan kedengaran profesional untuk mendapat kepercayaan. Sentiasa sahkan dengan menghubungi nombor rasmi sendiri." }
+    ]
+  },
+  loan: {
+    en: [
+      { q: "A WhatsApp message offers instant loans with no credit check and very low interest. This is most likely:",
+        opts: ["A new government financial aid programme", "A loan scam targeting people in financial need", "A promotion from a licensed digital bank", "A legitimate personal loan offer"],
+        ans: 1, exp: "No credit check, instant approval and unusually low interest rates are classic signs of a fraudulent loan offer." },
+      { q: "A loan agent asks you to pay RM300 as a processing fee before your loan can be approved. You should:",
+        opts: ["Pay it as fees are normal in loan applications", "Refuse as licensed lenders never collect upfront fees before approval", "Negotiate to pay only RM150 instead", "Ask a friend to pay on your behalf"],
+        ans: 1, exp: "Licensed financial institutions process all charges officially after loan approval. Any request for upfront cash payment before approval is a scam." },
+      { q: "Where can you verify if a money lender is officially licensed in Malaysia?",
+        opts: ["On their own website or social media page", "On Bank Negara Malaysia's official website at bnm.gov.my", "By asking the agent for their business card", "By checking their office address on Google Maps"],
+        ans: 1, exp: "Bank Negara Malaysia maintains the official list of licensed financial institutions and money lenders at bnm.gov.my." }
+    ],
+    bm: [
+      { q: "Mesej WhatsApp menawarkan pinjaman segera tanpa semakan kredit dan faedah yang sangat rendah. Ini paling berkemungkinan adalah:",
+        opts: ["Program bantuan kewangan kerajaan yang baharu", "Penipuan pinjaman yang menyasarkan orang yang memerlukan kewangan", "Promosi dari bank digital berlesen", "Tawaran pinjaman peribadi yang sah"],
+        ans: 1, exp: "Tiada semakan kredit, kelulusan segera dan kadar faedah yang luar biasa rendah adalah tanda klasik tawaran pinjaman yang penipuan." },
+      { q: "Ejen pinjaman meminta anda membayar RM300 sebagai yuran pemprosesan sebelum pinjaman anda boleh diluluskan. Anda patut:",
+        opts: ["Bayar kerana yuran adalah perkara biasa dalam permohonan pinjaman", "Enggan kerana pemberi pinjaman berlesen tidak pernah mengutip yuran pendahuluan sebelum kelulusan", "Berunding untuk membayar hanya RM150 sebaliknya", "Minta rakan membayar bagi pihak anda"],
+        ans: 1, exp: "Institusi kewangan berlesen memproses semua caj secara rasmi selepas kelulusan pinjaman. Sebarang permintaan untuk bayaran tunai pendahuluan sebelum kelulusan adalah penipuan." },
+      { q: "Di mana anda boleh mengesahkan sama ada pemberi wang berlesen secara rasmi di Malaysia?",
+        opts: ["Di laman web mereka sendiri atau halaman media sosial", "Di laman web rasmi Bank Negara Malaysia di bnm.gov.my", "Dengan meminta kad perniagaan ejen", "Dengan menyemak alamat pejabat mereka di Google Maps"],
+        ans: 1, exp: "Bank Negara Malaysia menyelenggara senarai rasmi institusi kewangan dan pemberi wang berlesen di bnm.gov.my." }
+    ]
+  },
+  love: {
+    en: [
+      { q: "Someone you met on a dating app confesses deep love after only 2 weeks without ever meeting you. They then ask for money for a medical emergency. You should:",
+        opts: ["Help them as they clearly care about you", "Recognise this as a love scam and cut all contact", "Send only a small amount to test if they are real", "Ask them to video call to prove the emergency"],
+        ans: 1, exp: "Declaring love rapidly without meeting and then asking for money is the textbook love scam sequence. Cut contact immediately." },
+      { q: "How can you check if an online romantic interest is using a real or stolen profile photo?",
+        opts: ["Ask them to smile in their next photo", "Run a reverse image search on Google Images", "Check how many friends they have on social media", "Ask them to take a photo holding a piece of paper with your name"],
+        ans: 1, exp: "A reverse image search on Google Images can reveal if a photo has been taken from another person's account or stock photo sites." },
+      { q: "A person you have been talking to online for 3 months always has a reason to cancel video calls. This is:",
+        opts: ["Normal as they might be very busy with work", "A strong warning sign that they may be using a fake identity", "Acceptable if they are in a different time zone", "Fine as long as they keep messaging you regularly"],
+        ans: 1, exp: "Consistently avoiding video calls is one of the strongest indicators of a fake online identity. Genuine people have no reason to always avoid showing their face." }
+    ],
+    bm: [
+      { q: "Seseorang yang anda temui di apl temu janji mengaku cinta mendalam selepas hanya 2 minggu tanpa pernah bertemu. Mereka kemudian meminta wang untuk kecemasan perubatan. Anda patut:",
+        opts: ["Bantu mereka kerana mereka jelas mengambil berat tentang anda", "Sedar ini adalah penipuan cinta dan putuskan semua hubungan", "Hantar hanya jumlah kecil untuk menguji sama ada mereka nyata", "Minta mereka membuat panggilan video untuk membuktikan kecemasan"],
+        ans: 1, exp: "Mengaku cinta dengan cepat tanpa bertemu dan kemudian meminta wang adalah urutan penipuan cinta yang biasa. Putuskan hubungan dengan segera." },
+      { q: "Bagaimana anda boleh menyemak sama ada minat romantik dalam talian anda menggunakan foto profil yang sebenar atau yang dicuri?",
+        opts: ["Minta mereka tersenyum dalam foto seterusnya", "Jalankan carian imej terbalik di Google Images", "Semak berapa ramai rakan yang mereka ada di media sosial", "Minta mereka mengambil foto sambil memegang sekeping kertas dengan nama anda"],
+        ans: 1, exp: "Carian imej terbalik di Google Images boleh mendedahkan sama ada foto telah diambil dari akaun orang lain atau laman web foto stok." },
+      { q: "Seseorang yang telah anda bercakap dalam talian selama 3 bulan sentiasa ada alasan untuk membatalkan panggilan video. Ini adalah:",
+        opts: ["Normal kerana mereka mungkin sangat sibuk dengan kerja", "Tanda amaran yang kuat bahawa mereka mungkin menggunakan identiti palsu", "Boleh diterima jika mereka berada di zon masa yang berbeza", "Tidak mengapa selagi mereka terus menghantar mesej kepada anda secara kerap"],
+        ans: 1, exp: "Sentiasa mengelakkan panggilan video adalah salah satu petanda terkuat identiti dalam talian palsu. Orang yang tulen tidak ada sebab untuk sentiasa mengelak menunjukkan muka mereka." }
+    ]
+  },
+  qr: {
+    en: [
+      { q: "You scan a QR code on a restaurant table to view the menu, but it opens a page asking for your banking login. You should:",
+        opts: ["Log in as it might be required to place an order", "Close the page immediately and inform the restaurant staff", "Enter your details carefully to see what happens", "Share the page with others at the table to check"],
+        ans: 1, exp: "A restaurant menu QR code should never ask for banking credentials. Close immediately and alert staff as the QR code may have been tampered with." },
+      { q: "What is the safest way to use a QR code scanner?",
+        opts: ["Scan any QR code you see and check the result after", "Use a scanner that previews the URL before you open it", "Scan the code twice to confirm it is safe", "Only scan QR codes that have a printed logo next to them"],
+        ans: 1, exp: "A QR scanner that previews the destination URL lets you check it is legitimate before committing to opening it." },
+      { q: "You notice a sticker placed over a QR code on a parking payment machine. You should:",
+        opts: ["Scan it as stickers are commonly used to replace old QR codes", "Do not scan it and report it to the parking operator immediately", "Peel off the sticker to see if there is another code underneath", "Scan it but do not enter any payment details"],
+        ans: 1, exp: "Placing fake QR stickers over legitimate ones in public places is a known scam method. Never scan a QR code that looks like it has been added on top of another." }
+    ],
+    bm: [
+      { q: "Anda mengimbas kod QR di atas meja restoran untuk melihat menu, tetapi ia membuka halaman yang meminta log masuk perbankan anda. Anda patut:",
+        opts: ["Log masuk kerana ia mungkin diperlukan untuk membuat pesanan", "Tutup halaman dengan segera dan maklumkan kepada kakitangan restoran", "Masukkan butiran anda dengan berhati-hati untuk melihat apa yang berlaku", "Kongsikan halaman dengan orang lain di meja untuk disemak"],
+        ans: 1, exp: "Kod QR menu restoran tidak sepatutnya meminta kelayakan perbankan. Tutup segera dan beritahu kakitangan kerana kod QR mungkin telah diusik." },
+      { q: "Apakah cara paling selamat untuk menggunakan pengimbas kod QR?",
+        opts: ["Imbas mana-mana kod QR yang anda lihat dan semak hasilnya selepas itu", "Gunakan pengimbas yang pratonton URL sebelum anda membukanya", "Imbas kod dua kali untuk mengesahkan ia selamat", "Hanya imbas kod QR yang mempunyai logo bercetak di sebelahnya"],
+        ans: 1, exp: "Pengimbas QR yang pratonton URL destinasi membolehkan anda menyemak ia sah sebelum membukanya." },
+      { q: "Anda perasan pelekat yang diletakkan mengatasi kod QR pada mesin pembayaran parkir. Anda patut:",
+        opts: ["Imbas kerana pelekat biasa digunakan untuk menggantikan kod QR yang lama", "Jangan imbas dan laporkan kepada pengendali parkir dengan segera", "Tanggalkan pelekat untuk melihat sama ada ada kod lain di bawahnya", "Imbas tetapi jangan masukkan sebarang butiran pembayaran"],
+        ans: 1, exp: "Meletakkan pelekat QR palsu mengatasi yang sah di tempat awam adalah kaedah penipuan yang diketahui. Jangan sekali-kali mengimbas kod QR yang kelihatan seperti ditambah di atas kod lain." }
+    ]
+  }
+};
+
+// ════════════════════════════════════════════════════════
+// BADGE DEFINITIONS
+// ════════════════════════════════════════════════════════
+const BADGES = {
+  phone:      { icon: '📞🏅', label: { en: 'Phone Guard',      bm: 'Pengawal Telefon' } },
+  malware:    { icon: '🦠🏅', label: { en: 'Malware Defender', bm: 'Pembela Malware' } },
+  job:        { icon: '💼🏅', label: { en: 'Job Savvy',        bm: 'Bijak Kerja' } },
+  phishing:   { icon: '🎣🏅', label: { en: 'Link Watcher',     bm: 'Pemerhati Pautan' } },
+  mule:       { icon: '🏦🏅', label: { en: 'Account Protector',bm: 'Pelindung Akaun' } },
+  ecommerce:  { icon: '🛒🏅', label: { en: 'Safe Shopper',     bm: 'Pembeli Selamat' } },
+  investment: { icon: '📈🏅', label: { en: 'Smart Investor',   bm: 'Pelabur Bijak' } },
+  cashreward: { icon: '🎁🏅', label: { en: 'Prize Wise',       bm: 'Bijak Hadiah' } },
+  loan:       { icon: '💰🏅', label: { en: 'Loan Alert',       bm: 'Waspada Pinjaman' } },
+  love:       { icon: '💔🏅', label: { en: 'Heart Guard',      bm: 'Pengawal Hati' } },
+  qr:         { icon: '📷🏅', label: { en: 'QR Shield',        bm: 'Perisai QR' } }
+};
+
+// ════════════════════════════════════════════════════════
+// QUIZ STATE
+// ════════════════════════════════════════════════════════
+let quizScamId = null;
+let quizQuestions = [];
+let quizCurrent = 0;
+let quizScore = 0;
+let quizAnswered = false;
+let earnedBadges = JSON.parse(localStorage.getItem('cyreg_badges') || '{}');
+
+function saveBadges() {
+  localStorage.setItem('cyreg_badges', JSON.stringify(earnedBadges));
+}
+
+// ════════════════════════════════════════════════════════
+// START QUIZ
+// ════════════════════════════════════════════════════════
+function startQuiz() {
+  const s = SCAMS[currentScamIndex];
+  quizScamId = s.id;
+  quizQuestions = QUIZ_DATA[s.id][globalLang];
+  quizCurrent = 0;
+  quizScore = 0;
+  quizAnswered = false;
+
+  // Set quiz hero
+  const hero = document.getElementById('quiz-hero');
+  hero.style.background = `linear-gradient(135deg, ${s.colorFrom}, ${s.colorTo})`;
+  document.getElementById('q-icon').textContent = s.icon;
+  document.getElementById('q-title').textContent = s[globalLang].title;
+  document.getElementById('quiz-back-btn').textContent = globalLang === 'en' ? '← Back' : '← Kembali';
+
+  document.getElementById('question-card').style.display = 'block';
+  document.getElementById('result-card').style.display = 'none';
+
+  showQuestion();
+
+  document.getElementById('page-detail').classList.remove('active');
+  document.getElementById('page-quiz').classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function showQuestion() {
+  const q = quizQuestions[quizCurrent];
+  const pct = ((quizCurrent) / quizQuestions.length * 100) + '%';
+  document.getElementById('quiz-progress-fill').style.width = pct;
+  document.getElementById('quiz-progress-label').textContent =
+    globalLang === 'en'
+      ? `Question ${quizCurrent + 1} of ${quizQuestions.length}`
+      : `Soalan ${quizCurrent + 1} daripada ${quizQuestions.length}`;
+
+  document.getElementById('question-text').textContent = q.q;
+
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = q.opts.map((opt, i) => `
+    <button class="option-btn" onclick="selectAnswer(${i})">${opt}</button>
+  `).join('');
+
+  document.getElementById('quiz-feedback').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'none';
+  quizAnswered = false;
+}
+
+function selectAnswer(idx) {
+  if (quizAnswered) return;
+  quizAnswered = true;
+
+  const q = quizQuestions[quizCurrent];
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach(b => b.disabled = true);
+
+  const correct = idx === q.ans;
+  if (correct) quizScore++;
+
+  btns[idx].classList.add(correct ? 'correct' : 'wrong');
+  if (!correct) btns[q.ans].classList.add('correct');
+
+  const fb = document.getElementById('quiz-feedback');
+  fb.style.display = 'block';
+  fb.className = 'quiz-feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = (correct
+    ? (globalLang === 'en' ? '✅ Correct! ' : '✅ Betul! ')
+    : (globalLang === 'en' ? '❌ Wrong. ' : '❌ Salah. '))
+    + q.exp;
+
+  const nextBtn = document.getElementById('next-btn');
+  nextBtn.style.display = 'inline-block';
+  nextBtn.textContent = quizCurrent < quizQuestions.length - 1
+    ? (globalLang === 'en' ? 'Next Question →' : 'Soalan Seterusnya →')
+    : (globalLang === 'en' ? 'See Results →' : 'Lihat Keputusan →');
+}
+
+function nextQuestion() {
+  quizCurrent++;
+  if (quizCurrent < quizQuestions.length) {
+    showQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  document.getElementById('quiz-progress-fill').style.width = '100%';
+  document.getElementById('question-card').style.display = 'none';
+  document.getElementById('result-card').style.display = 'block';
+
+  const passed = quizScore === quizQuestions.length;
+  const badge = BADGES[quizScamId];
+  const scam = SCAMS.find(s => s.id === quizScamId);
+
+  document.getElementById('result-icon').textContent = passed ? '🎉' : '😔';
+
+  if (globalLang === 'en') {
+    document.getElementById('result-title').textContent = passed ? 'Perfect Score!' : 'Not quite there yet';
+    document.getElementById('result-score').textContent = `You got ${quizScore} out of ${quizQuestions.length} correct.`;
+    document.getElementById('result-msg').textContent = passed
+      ? `You have earned the ${badge.label.en} badge for completing this module!`
+      : 'You need 3 out of 3 to earn the badge. Read the module again and try once more.';
+    document.getElementById('retry-btn').textContent = '↩ Try Again';
+    document.getElementById('back-module-btn').textContent = '📖 Back to Module';
+    document.getElementById('cert-btn').textContent = '🏆 View Certificate';
+  } else {
+    document.getElementById('result-title').textContent = passed ? 'Markah Sempurna!' : 'Belum berjaya lagi';
+    document.getElementById('result-score').textContent = `Anda mendapat ${quizScore} daripada ${quizQuestions.length} betul.`;
+    document.getElementById('result-msg').textContent = passed
+      ? `Anda telah mendapat badge ${badge.label.bm} untuk melengkapkan modul ini!`
+      : 'Anda perlu 3 daripada 3 untuk mendapat badge. Baca semula modul dan cuba sekali lagi.';
+    document.getElementById('retry-btn').textContent = '↩ Cuba Lagi';
+    document.getElementById('back-module-btn').textContent = '📖 Kembali ke Modul';
+    document.getElementById('cert-btn').textContent = '🏆 Lihat Sijil';
+  }
+
+  const badgeEl = document.getElementById('result-badge');
+  if (passed) {
+    earnedBadges[quizScamId] = true;
+    saveBadges();
+    badgeEl.style.display = 'block';
+    badgeEl.innerHTML = `<div style="font-size:3rem">${badge.icon}</div><div class="result-badge-label">${badge.label[globalLang]}</div>`;
+    document.getElementById('cert-btn').style.display =
+      Object.keys(earnedBadges).length === 11 ? 'inline-block' : 'none';
+  } else {
+    badgeEl.style.display = 'none';
+    document.getElementById('cert-btn').style.display = 'none';
+  }
+
+  // Refresh quiz CTA on detail page
+  updateQuizCta();
+}
+
+function retryQuiz() {
+  quizCurrent = 0;
+  quizScore = 0;
+  document.getElementById('question-card').style.display = 'block';
+  document.getElementById('result-card').style.display = 'none';
+  showQuestion();
+}
+
+function backToModule() {
+  document.getElementById('page-quiz').classList.remove('active');
+  document.getElementById('page-detail').classList.add('active');
+  updateQuizCta();
+  window.scrollTo(0, 0);
+}
+
+function updateQuizCta() {
+  if (currentScamIndex < 0) return;
+  const s = SCAMS[currentScamIndex];
+  const badge = BADGES[s.id];
+  const earned = earnedBadges[s.id];
+  const box = document.getElementById('quiz-cta-box');
+  const ctaIcon = document.getElementById('quiz-cta-icon');
+  const ctaTitle = document.getElementById('quiz-cta-title');
+  const ctaSub = document.getElementById('quiz-cta-sub');
+  const startBtn = document.getElementById('quiz-start-btn');
+  const earnedDiv = document.getElementById('badge-earned-cta');
+
+  if (earned) {
+    ctaIcon.textContent = badge.icon;
+    ctaTitle.textContent = globalLang === 'en'
+      ? `Badge Earned: ${badge.label.en}`
+      : `Badge Diperoleh: ${badge.label.bm}`;
+    ctaSub.textContent = globalLang === 'en'
+      ? 'You passed this module with a perfect score!'
+      : 'Anda lulus modul ini dengan markah sempurna!';
+    startBtn.textContent = globalLang === 'en' ? 'Retake Quiz' : 'Cuba Semula';
+    earnedDiv.style.display = 'none';
+  } else {
+    ctaIcon.textContent = '🧠';
+    ctaTitle.textContent = globalLang === 'en'
+      ? 'Ready to test your knowledge?'
+      : 'Bersedia untuk menguji pengetahuan anda?';
+    ctaSub.textContent = globalLang === 'en'
+      ? 'Answer 3 questions correctly to earn your badge for this module.'
+      : 'Jawab 3 soalan dengan betul untuk mendapat badge modul ini.';
+    startBtn.textContent = globalLang === 'en' ? 'Take Quiz →' : 'Ambil Kuiz →';
+    earnedDiv.style.display = 'none';
+  }
+}
+
+// ════════════════════════════════════════════════════════
+// CERTIFICATE PAGE
+// ════════════════════════════════════════════════════════
+function showCertPage() {
+  document.getElementById('page-quiz').classList.remove('active');
+  document.getElementById('page-home').classList.remove('active');
+  document.getElementById('page-detail').classList.remove('active');
+  document.getElementById('page-cert').classList.add('active');
+  document.getElementById('certificate').style.display = 'none';
+
+  const nameSection = document.getElementById('cert-name-section');
+  const label = document.getElementById('cert-name-label');
+  const certSigName = document.getElementById('cert-sig-name');
+
+  label.textContent = globalLang === 'en'
+    ? 'Enter your name to generate your certificate:'
+    : 'Masukkan nama anda untuk menjana sijil anda:';
+  document.getElementById('cert-name-field').placeholder =
+    globalLang === 'en' ? 'Full Name' : 'Nama Penuh';
+  document.querySelector('.generate-btn').textContent =
+    globalLang === 'en' ? 'Generate Certificate' : 'Jana Sijil';
+  document.querySelector('.print-btn').textContent =
+    globalLang === 'en' ? '🖨️ Print / Save PDF' : '🖨️ Cetak / Simpan PDF';
+  document.getElementById('progress-title').textContent =
+    globalLang === 'en' ? 'Your Badge Progress' : 'Kemajuan Badge Anda';
+
+  // Mobile print tip
+  document.getElementById('mobile-tip-android').textContent = globalLang === 'en'
+    ? 'Android: tap ⋮ menu then Print, select Save as PDF'
+    : 'Android: ketuk menu ⋮ kemudian Print, pilih Save as PDF';
+  document.getElementById('mobile-tip-ios').textContent = globalLang === 'en'
+    ? 'iPhone: tap Share then Print, pinch out on preview to save as PDF'
+    : 'iPhone: ketuk Share kemudian Print, cubit keluar pada pratonton untuk simpan sebagai PDF';
+
+  renderBadgesGrid();
+  window.scrollTo(0, 0);
+}
+
+function renderBadgesGrid() {
+  const grid = document.getElementById('badges-grid-cert');
+  grid.innerHTML = SCAMS.map(s => {
+    const badge = BADGES[s.id];
+    const earned = earnedBadges[s.id];
+    return `<div class="badge-item ${earned ? 'earned' : ''}">
+      <span class="b-icon">${earned ? badge.icon : '⬜'}</span>
+      <div class="b-name">${badge.label[globalLang]}</div>
+      <div class="b-status">${earned
+        ? (globalLang === 'en' ? '✅ Earned' : '✅ Diperoleh')
+        : (globalLang === 'en' ? '🔒 Locked' : '🔒 Terkunci')}</div>
+    </div>`;
+  }).join('');
+}
+
+function generateCert() {
+  const name = document.getElementById('cert-name-field').value.trim();
+  if (!name) {
+    alert(globalLang === 'en' ? 'Please enter your name.' : 'Sila masukkan nama anda.');
+    return;
+  }
+
+  const allBadges = Object.keys(earnedBadges).length;
+  const total = SCAMS.length;
+
+  document.getElementById('cert-recipient-name').textContent = name;
+  document.getElementById('cert-presents').textContent =
+    globalLang === 'en' ? 'This is to certify that' : 'Ini adalah untuk mengesahkan bahawa';
+  document.getElementById('cert-desc').textContent = globalLang === 'en'
+    ? `has successfully completed the CyReg ScamShield Community Awareness Programme and passed ${allBadges} of ${total} scam awareness modules.`
+    : `telah berjaya melengkapkan Program Kesedaran Komuniti CyReg ScamShield dan lulus ${allBadges} daripada ${total} modul kesedaran scam.`;
+  document.getElementById('cert-badges-title').textContent =
+    globalLang === 'en' ? 'Modules Completed' : 'Modul Diselesaikan';
+  document.getElementById('cert-badges-row').innerHTML =
+    SCAMS.filter(s => earnedBadges[s.id]).map(s => `<span title="${BADGES[s.id].label[globalLang]}">${BADGES[s.id].icon}</span>`).join('');
+
+  const now = new Date();
+  const dateStr = now.toLocaleDateString(globalLang === 'en' ? 'en-MY' : 'ms-MY', { day: 'numeric', month: 'long', year: 'numeric' });
+  document.getElementById('cert-date').textContent =
+    (globalLang === 'en' ? 'Date of Completion: ' : 'Tarikh Penyiapan: ') + dateStr;
+
+  document.getElementById('cert-sig-name').textContent =
+    globalLang === 'en' ? 'CyReg Programme Director' : 'Pengarah Program CyReg';
+  document.getElementById('cert-footer-strip').textContent = 'CyReg ScamShield | Cybersecurity Research Group, UPM';
+
+  document.getElementById('certificate').style.display = 'block';
+  document.getElementById('cert-name-section').style.display = 'none';
+  document.getElementById('certificate').scrollIntoView({ behavior: 'smooth' });
+}
+
+function printCert() {
+  window.print();
+}
+
 </script>
+<!-- ═══════════════════════════════════════════════════════ QUIZ PAGE -->
+<div id="page-quiz" class="page">
+  <div class="quiz-hero" id="quiz-hero">
+    <button class="back-btn" id="quiz-back-btn" onclick="backToModule()">← Back</button>
+    <span class="icon-big" id="q-icon"></span>
+    <h1 id="q-title">Quiz</h1>
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
+      <div class="quiz-progress-label" id="quiz-progress-label">Question 1 of 3</div>
+    </div>
+  </div>
+
+  <div class="quiz-body">
+    <div class="question-card" id="question-card">
+      <div class="question-text" id="question-text"></div>
+      <div class="options-grid" id="options-grid"></div>
+      <div class="quiz-feedback" id="quiz-feedback" style="display:none"></div>
+      <button class="next-btn" id="next-btn" onclick="nextQuestion()" style="display:none" id="next-btn"></button>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-card" id="result-card" style="display:none">
+      <div class="result-icon" id="result-icon"></div>
+      <div class="result-title" id="result-title"></div>
+      <div class="result-score" id="result-score"></div>
+      <div class="result-badge" id="result-badge" style="display:none"></div>
+      <div class="result-msg" id="result-msg"></div>
+      <div class="result-btns">
+        <button class="retry-btn" id="retry-btn" onclick="retryQuiz()"></button>
+        <button class="back-module-btn" id="back-module-btn" onclick="backToModule()"></button>
+        <button class="cert-btn" id="cert-btn" onclick="showCertPage()" style="display:none"></button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>CyReg ScamShield</strong> | Community Scam Awareness Programme<br>
+    Cybersecurity Research Group (CyReg), Faculty of Computer Science &amp; Information Technology, Universiti Putra Malaysia
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ CERTIFICATE PAGE -->
+<div id="page-cert" class="page">
+  <div class="cert-page-wrap">
+    <div class="cert-nav">
+      <button class="back-btn" style="color:var(--ink-mid)" onclick="showHome()">← Home</button>
+      <button class="print-btn" onclick="printCert()">🖨️ Print / Save PDF</button>
+    </div>
+    <div class="mobile-print-tip" id="mobile-print-tip">
+      📱 <span id="mobile-tip-android"></span> &nbsp;|&nbsp; 🍎 <span id="mobile-tip-ios"></span>
+    </div>
+
+    <div class="cert-name-input" id="cert-name-section">
+      <p id="cert-name-label">Enter your name to generate your certificate:</p>
+      <input type="text" id="cert-name-field" placeholder="Full Name / Nama Penuh" maxlength="60">
+      <button class="generate-btn" onclick="generateCert()">Generate Certificate</button>
+    </div>
+
+    <!-- THE CERTIFICATE -->
+    <div class="certificate" id="certificate" style="display:none">
+      <div class="cert-header">
+        <div class="cert-logo">🔐</div>
+        <div class="cert-org">Cybersecurity Research Group (CyReg)</div>
+        <div class="cert-faculty">Faculty of Computer Science &amp; Information Technology</div>
+        <div class="cert-uni">Universiti Putra Malaysia</div>
+      </div>
+      <div class="cert-body">
+        <div class="cert-presents" id="cert-presents">This is to certify that</div>
+        <div class="cert-name" id="cert-recipient-name"></div>
+        <div class="cert-desc" id="cert-desc">has successfully completed the CyReg ScamShield Community Awareness Programme and passed all 11 scam awareness modules with a perfect score.</div>
+        <div class="cert-badges-title" id="cert-badges-title">Modules Completed</div>
+        <div class="cert-badges-row" id="cert-badges-row"></div>
+        <div class="cert-date" id="cert-date"></div>
+        <div class="cert-sig-row">
+          <div class="cert-sig-block">
+            <div class="cert-sig-line"></div>
+            <div class="cert-sig-name" id="cert-sig-name">CyReg Programme Director</div>
+            <div class="cert-sig-title">Cybersecurity Research Group, UPM</div>
+          </div>
+        </div>
+      </div>
+      <div class="cert-footer-strip" id="cert-footer-strip">CyReg ScamShield | cyreg.upm.edu.my</div>
+    </div>
+
+    <!-- BADGES PROGRESS on cert page -->
+    <div class="progress-section" id="progress-section">
+      <h3 id="progress-title">Your Progress</h3>
+      <div class="badges-grid" id="badges-grid-cert"></div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
